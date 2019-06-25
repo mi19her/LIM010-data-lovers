@@ -1,0 +1,23 @@
+.login{
+    display: flex;
+    align-items: center;
+    flex-flow: column wrap;
+    height: 100vh;
+    background: #D1DBFF;
+    color:#204282;
+    padding: 30px 30px;
+}
+.logo-bm{
+    width: 220px;
+    height: 220px;
+}
+.login label{
+    font-family: 'Merienda', cursive;
+    font-size: 16px;
+    line-height: 25px;
+    color: #000000;
+}
+.login input{
+    background: #FFFFFF;
+    border-radius: 2px;
+} 
