@@ -3,42 +3,46 @@ body{
     background-position: center;
     background-repeat: no-repeat;
 }
+.page1{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
 .login-bg {
     background-image: url(./img/fondo1.jpg);   
 }
 .login{
     display: flex;
     flex-flow: column wrap;
-    height: 100vh;
     margin: 0 auto;
-    background: #edebfd73;
+    background: #edebfdc9;
     width: 260px;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding: 50px 40px;
 }
 .logo-bm{
     width: 220px;
-    height: 220px;
     align-self: center;
+    margin-bottom: 20px;
 }
 .login label{
-    font-family: 'Merienda', cursive;
+    font-family: "Open Sans", sans-serif;
     font-style: normal;
     font-weight: normal;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 25px;
     color: #000000;
 }
 .login input{
     background: #FFFFFF;
+    border: none;
     border-radius: 2px;
     line-height: 25px;
     margin-bottom: 12px;
 } 
-a{
+.login a{
     align-self: flex-end;
     line-height: 25px;
-    margin-bottom: 12px;
+    margin: 12px 0px ;
     color: #100BFF;
 }
 .login button{
@@ -47,5 +51,15 @@ a{
     color: #ffffff;
     background: #3897F0;
     font-size: 14px;
-    font-family:'Merienda', cursive;
 }
+.banner{
+    width: 1000px;
+    margin: 30px auto;
+    background: #ffffff;
+}
+.banner ul{
+    list-style: none;
+}
+.menu >li{
+    display: inline-block;
+} 
