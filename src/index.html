@@ -9,7 +9,7 @@
   </head>
   <body class="login-bg">
     <header>
-      <nav class="banner">
+      <!-- <nav class="banner">
         <ul class="menu"></ul>
           <li><a href="#">¿Que hacemos?</a></li>
           <li><a href="#">Paises</a></li>
@@ -21,22 +21,23 @@
               </ul>
           <li><a href="#">Indicadores</a></li>
           <li><a href="#">Graficos</a></li>
-      </nav>
+      </nav> -->
     </header>
     <main>
-      <section class="page1">
+      <section class="page1" id="seccion1">
         <form class="login">
           <img src="./img/logo-bm.png" alt="logo-bm" class="logo-bm">
             <label>Correo Electronico</label>
             <input type="text">
             <label>Contraseña</label>
-            <input type="password">
+            <input type="password" id="password">
+            <span class="mnsInc" id="mnsInc"></span>
             <a href="pagina2.htm">¿Olvidaste Contraseña?</a>
-            <button type="submit"> INGRESAR </button>
+            <button type="button" id="btnIngresar"> INGRESAR </button>
             <a href=""> ¿No tienes una cuenta?<strong> Registrate</strong></a>
         </form>
       </section>
-      <section class="page2">
+      <section class="page2 hide" id="seccion2">
         
       </section>
     </main>
