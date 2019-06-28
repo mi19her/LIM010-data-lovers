@@ -63,3 +63,6 @@ body{
 .menu >li{
     display: inline-block;
 } 
+.hide{
+	display:none;
+}
