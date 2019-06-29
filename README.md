@@ -1,82 +1,41 @@
-# Realidad Latina
+# INVESTMENT DATA
 
 ## Índice
 
 - [Requerimientos del proyecto](#requerimientos-del-proyecto)
 - [Contenido de referencia](#contenido-de-referencia)
 
-***
 
-**Banco Mundial (World Bank)**
+Esta aplicacion contiene indicadores de desarrollo economico, demografico y comercial de los paises: Brasil, Mexico, CHile y Peru. Esta informacion ayuda a tomar decisiones estrategicas que beneficien el interes del usuario. 
+Para acceder a la aplicacion se iniciara sesion ingresando su correo electronico y contraseña "laboratoria".
 
-Este set de datos contiene [indicadores de desarrollo del Banco Mundial](src/data/worldbank/) 
-de algunos países (Brasil, Chile, México y Perú). Estos datos incluyen indicadores 
-demográficos, económicos y comerciales. Si _como equipo_ deciden trabajar con 
-la data del [Banco Mundial](https://www.bancomundial.org/), deberán implementar 
-las siguientes historias de usuario:
-
-- Como usuaria quiero poder loguearme con mi usuario y contraseña para acceder 
-al sitio web.
-- Como usuaria quiero poder seleccionar un país y visualizar la data de sus 
-respectivos indicadores para analizar el comportamiento demográfico/económico 
-de cada región.
-- Como usuaria quiero poder ordenar los datos de los indicadores de manera 
-ascendente (menor a mayor) o descendente (mayor a menor) para entender su 
-evolución por años y porcentaje.
-- Como usuaria quiero poder filtrar los datos de los indicadores por año o 
-rango de años para entender su evolución en un tiempo definido.
-- Como usuario quiero poder ver el promedio de los porcentajes del indicador 
-seleccionado para tomar decisiones nuevas.
-
-### Planificación (Agile-Scrum)
-
-En este proyecto te hemos dado las historias de usuario. Éstas representan los 
-requerimientos y funcionalidades que desea el usuario final. Para su proceso de 
-planificación, deberán definir colaborativamente los _criterios de aceptación_ 
-y _definiciones de terminado_ específicos que permitan considerar a la _historia 
-de usuario_ desarrollada como válida y aceptada por el usuario final.
-
-Para realizar el seguimiento del desarrollo de las historias de usuario 
-utilizarás [issues](https://help.github.com/en/articles/about-issues) y 
-[project](https://help.github.com/en/articles/about-project-boards) en 
-Github. No dudes en solicitar ayuda a tus coaches.
-
-### UX (Diseño de experiencia de usuario)
-
-Antes de iniciar a codear, debes entender el problema que quieres solucionar 
-y cómo tu aplicación lo soluciona para ello:
-
-- Primero trabaja tu prototipo de baja fidelidad con papel y lápiz (blanco y 
-negro) para la vista mobile y desktop.
-- Luego valida esta solución con una compañera (pedir feedback).
-- Toma lo aprendido al momento de validar tu primer prototipo y desarrolla un 
-nuevo prototipo de alta fidelidad usando [Figma](https://www.figma.com/) para 
-la vista mobile y desktop.
-- Recuerda utilizar la identidad gráfica (colores, tipografía, etc) 
-correspondiente a la data que elijas.
-- Deberás exportar tu diseño a [Zeplin](https://zeplin.io/) y utilizar las 
-especificaciones de estilo que te dé Zeplin al momento de implementar tus 
-diseños en código.
-- En este proyecto te damos el prototipo final del 
-[login en figma](https://www.figma.com/file/awZfJWfpAioeanwhlcrsjSjc/Data-lovers?node-id=1%3A2) 
-el cual debe ser replicado en exactitud (_pixel perfect_).
-- Elaborar el readme del proyecto.
-
-`README.md`:
-Debe contener lo siguiente:
-
-- Un título con el nombre de tu proyecto.
-- Un resumen de 1 o 2 líneas de qué se trata tu proyecto e indicar el usuario 
-y la contraseña para utilizar el Demo.
 - La imagen final de tu proyecto.
-- Investigación UX:
-  - Explicar quiénes son los usuarios y los objetivos en relación con el 
-  producto.
-  - Explicar cómo el producto soluciona los problemas/necesidades de dichos 
-  usuarios.
-  - Luego colocarás la foto de tu primer prototipo de baja fidelidad (mobile 
+
+## Investigacion UX 
+  ### Usuarios
+  - Nuestros usuarios son todas las personas interesadas en el     crecimiento economico de su marca, que tienen un fin lucrativo y no lucrativo entre ellos tenemos a los empresarios, estudiantes, inversionistas, ONGs, profesionales y personas curiosas.
+  ### Producto
+  - Esta aplicacion te facilita la busqueda de informacion de tu interes, mostrando datos estadisticos de los indicadores seleccionados por pais las cuales son obtenidas a traves de la data del banco mundial por esto la informacion es veras y real. Teniendo esta informacion, como usuario, te ayudará a tomar mejores decisiones la cual te proporciona una ventaja al momento de invertir, e indirectamente ayudaras a disminuir los problemas economicos y sociales que aquejan a ese pais. 
+
+  ### Prototipo de Baja Fidelidad en Desktop
+   !["Login de Usuario y Vista 1"](im/loginVista1.jpg)
+
+   !["Login de Usuario y Vista 1"](im/vista2-3.jpg)
+
+   !["Login de Usuario y Vista 1"](im/vista4.jpg)
+
+  - Foto del primer prototipo de baja fidelidad (mobile 
   y desktop) en papel.
+
+   ### Prototipo de Baja Fidelidad en Mobile
+   !["Login de Usuario y Vista 1"](im/vista1_mobile.jpg)
+
+   !["Login de Usuario y Vista 1"](im/vista2_mobile.jpg)
+
+  - **`Feedback`**: Nos recomendaron trabajar con colores que contrastan mejor con la aplicacion, tambien nos recomendaron poner menos texto en la vista 1. 
+
   - Agregar un resumen del feedback recibido indicando las mejoras a realizar.
+
   - Imagen y link del prototipo de alta fidelidad final (mobile y desktop) en 
   Figma.
 
