@@ -4,12 +4,16 @@ const seccionOne=document.getElementById("seccion1");
 const seccionTwo=document.getElementById("seccion2");
 const seccionThree=document.getElementById("seccion3");
 const seccionFour=document.getElementById("seccion4");
+const seccionFive=document.getElementById("seccion5");
 const mnsInc=document.getElementById("mnsInc");
 const btnIngresar=document.getElementById("btnIngresar");
 const header=document.getElementById("header");
 const btnStart=document.getElementById("start");
 const btnCountry=document.getElementById("country");
 const btnPeru=document.getElementById("peru");
+const btnIndicator=document.getElementById("indicator");
+const inputTex=document.getElementById("nombre");
+const botonClick=document.getElementById("nombre");
 
 btnIngresar.addEventListener('click',()=>{
 if(password.value===''){
@@ -39,5 +43,13 @@ btnStart.addEventListener('click',()=>{
 btnPeru.addEventListener('click',()=>{
     seccionThree.classList.add('hide');
     seccionFour.classList.remove('hide');
-})    
-    
+}) 
+btnIndicator.addEventListener('click',()=>{
+    seccionFour.classList.add('hide');
+    seccionFive.classList.remove('hide');
+}) 
+botonClick.addEventListener('click',()=>{
+    console.log(texto.value);
+    saludar(texto.value);
+    salida.innerHTML;
+})
