@@ -9,7 +9,7 @@
     align-items: center;
 }
 .login-bg {
-    background-image: url(./img/fondo1.jpg);   
+    background-image: url(./img/fondofinal.gif);   
 }
 .img2 {
     background-image: url(./img/fondo2.jpg);
@@ -23,12 +23,12 @@
     padding: 50px 40px;
 }
 .logo-bm{
-    /* width: 120px; */
+    width: 219px;
     align-self: center;
     margin-bottom: 20px;
 }
 .login label{
-    font-family: "Open Sans", sans-serif;
+    font-family: 'Andada', serif;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
@@ -63,17 +63,21 @@ header{
 }
 header nav{
     display: flex;
-    justify-content: space-around;
     width: 100%;
     background:#3897F0;
     color:#ffffff;
 }
-/* header ul{
+header ul{
     list-style: none;
 }
-.menu >li{
-    display: inline-block;
-}  */ 
-.hide{
-	display:none;
+header a{
+    padding: 50px;
+    font-family: 'Andada', serif;
+    font-size: 24px;
 }
+.desarrollo{
+    flex-direction: column; 
+}
+/* .hide{
+	display:none;
+} */

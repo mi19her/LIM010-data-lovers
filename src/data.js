@@ -1,10 +1,16 @@
 /* Manejo de data */
 
-// esta es una función de ejemplo
-// puedes ver como agregamos la función a nuestro objeto global window
 
-const example = () => {
-  return 'example';
-};
+// Funcion para seleccion un indicador de un pais
+const arrayindicador = (dataOriginal) => {
+  const ListaNueva = [];
+  let indicator = dataOriginal["indicators"];
+  for (let i = 0; i < indicator.length; i++) {
+    ListaNueva.push(indicator[i]['indicatorName']);
+  }
+  return ListaNueva;
+}
 
-window.example = example;
+window.worldbank = {
+  arrayindicador: arrayindicador,
+}
