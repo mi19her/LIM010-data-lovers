@@ -12,8 +12,7 @@ const btnStart=document.getElementById("start");
 const btnCountry=document.getElementById("country");
 const btnPeru=document.getElementById("peru");
 const btnIndicator=document.getElementById("indicator");
-const inputTex=document.getElementById("nombre");
-const botonClick=document.getElementById("nombre");
+
 
 btnIngresar.addEventListener('click',()=>{
 if(password.value===''){
@@ -45,11 +44,8 @@ btnPeru.addEventListener('click',()=>{
     seccionFour.classList.remove('hide');
 }) 
 btnIndicator.addEventListener('click',()=>{
+    seccionTwo.classList.add('hide')
+    seccionThree.classList.add('hide');
     seccionFour.classList.add('hide');
     seccionFive.classList.remove('hide');
 }) 
-botonClick.addEventListener('click',()=>{
-    console.log(texto.value);
-    saludar(texto.value);
-    salida.innerHTML;
-})
