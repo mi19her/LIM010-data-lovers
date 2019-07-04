@@ -18,17 +18,15 @@ const indicadoresPorPais = (data, pais) => {
   }
   return ListaNueva;
 }
+// Funcion para s
 const tituloPorPais=(data,pais,tituloCountry)=>{
   const titleNew=[];
   let titleCountry = data[pais].indicators;
-  console.log(titleCountry);
   for(let l=0;l<titleCountry.length; l++){
     titleNew.push(titleCountry[l]['countryName']);
-    
   }
   return titleNew;
 }
-
 window.worldbank = {
   arrayCountry: arrayCountry,
   tituloPais:tituloPais,
