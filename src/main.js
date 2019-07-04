@@ -6,29 +6,32 @@ const seccionThree=document.getElementById("seccion3");
 const seccionFour=document.getElementById("seccion4");
 const seccionFive=document.getElementById("seccion5");
 const mnsInc=document.getElementById("mnsInc");
-const btnIngresar=document.getElementById("btnIngresar");
+// const btnIngresar=document.getElementById("btnIngresar");
 const header=document.getElementById("header");
 const btnStart=document.getElementById("start");
 const btnCountry=document.getElementById("country");
-const btnPeru=document.getElementById("peru");
+const selectCountry=document.getElementById("paises");
 const btnIndicator=document.getElementById("sector");
+const ListIndicador = document.getElementById('list');
+const titulo = document.getElementById("titulo");
 
-btnIngresar.addEventListener('click',()=>{
-if(password.value===''){
-    mnsInc.innerHTML="ingrese password";
-}
-else{
-    if(password.value==='laboratoria'){
-        seccionOne.classList.add('hide');
-        header.classList.remove('hide');
-        seccionTwo.classList.remove('hide');
-    }
-    else{
-        mnsInc.innerHTML="contraseña incorrecta";
-    }
-}
-password.value="";
-});
+
+// btnIngresar.addEventListener('click',()=>{
+// if(password.value===''){
+//     mnsInc.innerHTML="ingrese password";
+// }
+// else{
+//     if(password.value==='laboratoria'){
+//         seccionOne.classList.add('hide');
+//         header.classList.remove('hide');
+//         seccionTwo.classList.remove('hide');
+//     }
+//     else{
+//         mnsInc.innerHTML="contraseña incorrecta";
+//     }
+// }
+// password.value="";
+// });
 
 btnCountry.addEventListener('click',()=>{
     seccionTwo.classList.add('hide');
@@ -38,23 +41,33 @@ btnStart.addEventListener('click',()=>{
     seccionTwo.classList.remove('hide');
     seccionThree.classList.add('hide');
     });
-btnPeru.addEventListener('click',()=>{
+
+
+const pintarIndicadoresPorPais = (arrayIndicadores)=>{
+    let string =`<option disabled selected> Seleccione un indicador </option>`;
+    for(let i=0; i<arrayIndicadores.length;i++){
+      string +=`<option value="${arrayIndicadores[i]}">${arrayIndicadores[i]}</option>`
+    }
+    return string;
+};
+const pintarNommbresPorPais=(arrayTitle)=>{
+    let stringTitulo=`<h1 id="titulo"></h1>`;
+    for(let l=0;l<arrayTitle.length;l++){
+        stringTitulo =`INDICADORES DE ${arrayTitle[l]}`
+    }
+    return stringTitulo;
+}
+selectCountry.addEventListener('click', (event) => {
+    const paisSeleccionado = event.target.value;
+    if(paisSeleccionado !== '') {
     seccionThree.classList.add('hide');
     seccionFour.classList.remove('hide');
-}); 
+    titulo.innerHTML= pintarNommbresPorPais(worldbank.tituloPorPais(WORLDBANK, paisSeleccionado));
+    ListIndicador.innerHTML = pintarIndicadoresPorPais(worldbank.indicadoresPorPais(WORLDBANK, paisSeleccionado));
+   }
+})
+
 btnIndicator.addEventListener('click',()=>{
     seccionFour.classList.add('hide');
     seccionFive.classList.remove('hide');
 });
-
-//Busqueda de Indicadores para un pais
-
-const ListIndicador = document.getElementById('list');
-const ListaNueva = (dataOriginal)=>{
-    let string =`<option disabled selected> Seleccione un indicador </option>`;
-    for(let i=0; i<dataOriginal.length;i++){
-      string +=`<option value="${dataOriginal[i]}">${dataOriginal[i]}</option>`
-    }
-    return string;
-};
-ListIndicador.innerHTML = ListaNueva(worldbank.arrayindicador(WORLDBANK.BRA)); 

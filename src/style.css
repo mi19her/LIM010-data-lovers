@@ -9,7 +9,7 @@
     align-items: center;
 }
 .login-bg {
-    background-image: url(./img/fondofinal.gif);   
+    background-image: url(./img/fondo1.jpg);   
 }
 .img2 {
     background-image: url(./img/fondo2.jpg);
@@ -23,6 +23,11 @@
     padding: 50px 40px;
 }
 .logo-bm{
+    width: 219px;
+    align-self: center;
+    margin-bottom: 20px;
+}
+.countryClass{
     width: 219px;
     align-self: center;
     margin-bottom: 20px;
@@ -78,6 +83,6 @@ header a{
 .desarrollo{
     flex-direction: column; 
 }
-.hide{
+/* .hide{
 	display:none;
-}
+} */

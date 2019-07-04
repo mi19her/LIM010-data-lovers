@@ -19,7 +19,7 @@
       </nav>
     </header>
     <main>
-        <section class="container login-bg body" id="seccion1">
+        <!-- <section class="container login-bg body" id="seccion1">
         <form class="login">
           <img src="./img/logo-bm.png" alt="logo-bm" class="logo-bm">
             <label>Correo Electronico</label>
@@ -31,22 +31,25 @@
             <button type="button" id="btnIngresar"> INGRESAR </button>
             <a href=""> ¿No tienes una cuenta?<strong> Registrate</strong></a>
         </form>
-        </section>
+        </section> -->
         <section class="container hide img2 body" id="seccion2">
         </section>
 
         <section class ="container hide" id="seccion3">
          <h1>seleccione un pais pintado para ver sus indicadores</h1>
-         <img src="./img/peru.png" alt="logo-bm" class="logo-bm" id="peru">
-         <img src="./img/mexico.png" alt="logo-bm" class="logo-bm" id="mexico">
-         <img src="./img/brasil.png" alt="logo-bm" class="logo-bm" id="brasil">
-         <img src="./img/chile.png" alt="logo-bm" class="logo-bm" id="chile">
+         <picture id="paises">
+            <input type="image" class="countryClass" src="./img/peru.png" id="peru" value="PER" name="flag">
+            <input type="image" class="countryClass" src="./img/mexico.png" id="mexico" value="MEX" name="flag">
+            <input type="image" class="countryClass" src="./img/brasil.png" id="brasil" value="BRA" name="flag">
+            <input type="image" class="countryClass" src="./img/chile.png" id="chile" value="CHL" name="flag">
+         </picture>
          </section>
+
 
         <section class ="container hide" id="seccion4">
           <form class="desarrollo">
-              <h1 id="peru">INDICADORES DE PERU</h1>
-              <p> Escribir tu indicador de desarrollo para PERU</p>
+              <h1 id="titulo"></h1>
+              <p> Busca tu indicador de desarrollo</p>
               <select class="listIndicador" id="list">
                 <option disabled selected> Seleccione un indicador </option>
               </select>
