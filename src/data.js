@@ -9,23 +9,7 @@
    NuevoTitulo=object.keys(tituloCountry);
    return NuevoTitulo;
  }
-// const sectorIndicador = (sectorVariado)=>{
-//   let sector = [];
-//   sector=object.keys(sectorVariado);
-//   return sector;
-// }
-
-// Funcion para seleccion un indicador de un pais
-// const indicadoresPorPais = (data, pais) => {
-//   const ListaNueva = [];
-//   let indicator = data[pais].indicators;
-//   for (let i = 0; i < indicator.length; i++) {
-//     ListaNueva.push(indicator[i]['countryName'] + ' - ' + indicator[i]['indicatorName']);
-//   }
-//   return ListaNueva;
-// }
-
-// Funcion para s
+// Funcion para ver pais seleccionado
 const tituloPorPais=(data,pais)=>{
   const titleNew=[];
   let titleCountry = data[pais].indicators;
@@ -40,7 +24,7 @@ const indicadoresPorSector =(data,pais,sector)=>{
   let indicadores = data[pais].indicators;
      for(let n = 0; n < indicadores.length; n ++){
          if((indicadores[n]['indicatorCode']).substring(0,2)==sector){
-         listaNuevaSector.push(indicadores[n]['countryName']+indicadores[n]['indicatorName']+indicadores[n]['indicatorCode']);
+         listaNuevaSector.push(indicadores[n]['countryName']+" - "+ indicadores[n]['indicatorName']);
       }
     }
     return listaNuevaSector;
@@ -49,8 +33,6 @@ const indicadoresPorSector =(data,pais,sector)=>{
 window.worldbank = {
   arrayCountry: arrayCountry,
   tituloPais:tituloPais,
-  // sectorIndicador:sectorIndicador,
-  // indicadoresPorPais: indicadoresPorPais,
   tituloPorPais: tituloPorPais,
   indicadoresPorSector:indicadoresPorSector
 }

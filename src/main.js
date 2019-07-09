@@ -17,9 +17,9 @@ const selectSectores = document.getElementById("sectores");
 const mostrarIndicador = document.getElementById("indicadoresSector");
 
 const pintarIndicadoresPorSectoryPais = (arrayIndicadoresxSector) => {
-    let string = `<p id="indicadoresSector"></p>`;
+    let string = `<ul id="indicadoresSector"></ul>`;
     for (let i = 0; i < arrayIndicadoresxSector.length; i++) {
-        string += `<p value="${arrayIndicadoresxSector[i]}">${arrayIndicadoresxSector[i]}</p>`
+        string += `<ul id="indicadoresSector" value="${arrayIndicadoresxSector[i]}">${arrayIndicadoresxSector[i]}</ul>`
     }
     return string;
 };
@@ -48,13 +48,6 @@ btnStart.addEventListener('click', () => {
     seccionTwo.classList.remove('hide');
     seccionThree.classList.add('hide');
 });
-const pintarIndicadoresPorPais = (arrayIndicadores) => {
-    let string = `<option disabled selected> Seleccione un indicador </option>`;
-    for (let i = 0; i < arrayIndicadores.length; i++) {
-        string += `<option value="${arrayIndicadores[i]}">${arrayIndicadores[i]}</option>`
-    }
-    return string;
-};
 const pintarNommbresPorPais = (arrayTitle) => {
     let stringTitulo = `<h1 id="titulo"></h1>`;
     for (let l = 0; l < arrayTitle.length; l++) {

@@ -86,3 +86,7 @@ header a{
  .hide{
 	display:none;
 } 
+ table{
+    width: 50%;
+
+}
