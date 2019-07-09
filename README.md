@@ -1,11 +1,5 @@
 # INVESTMENT DATA
 
-## Índice
-
-- [Requerimientos del proyecto](#requerimientos-del-proyecto)
-- [Contenido de referencia](#contenido-de-referencia)
-
-
 Esta aplicacion contiene indicadores de desarrollo economico, demografico y comercial de los paises: Brasil, Mexico, CHile y Peru. Esta informacion ayuda a tomar decisiones estrategicas que beneficien el interes del usuario. 
 Para acceder a la aplicacion se iniciara sesion ingresando su correo electronico y contraseña "laboratoria".
 
