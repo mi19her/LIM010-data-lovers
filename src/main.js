@@ -69,12 +69,23 @@ selectCountry.addEventListener('click', (event) => {
 const pintarIndicadoresPorPais = (arrayIndicadores) => {
     let string = `<option disabled selected> Seleccione un indicador </option>`;
     for (let i = 0; i < arrayIndicadores.length; i++) {
-        string += `<option id=" " value="${arrayIndicadores[i]}">${arrayIndicadores[i]}</option>`
+        string += `<option id=${i} value="${i}">${arrayIndicadores[i]}</option>`
     }
     return string;
 };
+
+
+const listaDeIndicadores =  document.getElementById('list');
+
+listaDeIndicadores.addEventListener('change', (event) => {
+   
+   selectIndicador = WORLDBANK.PER.indicators[event.target.value].data
+   console.log(selectIndicador)
+});
+
+
 const grafico=()=>{
-    let arrayGrafico= new Array(Object.entries(WORLDBANK.PER.indicators[0].data));
+    let arrayGrafico= new Array(Object.entries( selectIndicador));
     let rango = arrayGrafico[0];
     rango.forEach((elemento,indice)=>{
       elemento[0]=(rango[indice][0]);
@@ -84,7 +95,6 @@ const grafico=()=>{
     data.addColumn('string', 'X');
     data.addColumn('number', '% ');
     data.addRows(rango);
-
     const options = {
       hAxis: {
         title: 'AÑOS'
@@ -106,5 +116,5 @@ buscar.addEventListener('click', (event) => {
     document.getElementById("seccion5").classList.remove('hide');
     grafico();
     // resultadoGrafico.innerHTML = selectRangoYear(numeroInicial.value, numeroFinal.value, WORLDBANK.PER.indicators[0].data);
-    console.log(selectRangoYear(numeroInicial.value, numeroFinal.value, WORLDBANK.PER.indicators[0].data))
+    console.log(selectRangoYear(numeroInicial.value, numeroFinal.value, selectIndicador))
 });
