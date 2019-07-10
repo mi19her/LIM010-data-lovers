@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Lovers</title>
+    <link href="https://fonts.googleapis.com/css?family=Andada&display=swap" rel="stylesheet">    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="body">
+    <header class="hide" id="header">
+        <img src="./img/logo-bm.png" alt="logo-bm" class="logo-bm">
+        <ul>
+            <a id="menuInicio"> INICIO </a>
+            <a id="menuCountry"> PAISES </a>
+            <a id="menuGraficos" class="hide"> GRAFICOS </a>
+            <a id="menuLogin"> Login </a>
+          </ul>
+        </header>
+        <main>
+            <section class="container login-bg body" id="seccion1">
+                <form class="login">
+                  <img src="./img/logo-bm.png" alt="logo-bm" class="logo-bm">
+                    <label>Correo Electronico</label>
+                    <input type="text">
+                    <label>Contraseña</label>
+                    <input type="password" id="password">
+                    <span class="mnsInc" id="mnsInc"></span>
+                    <a href="pagina2.htm">¿Olvidaste Contraseña?</a>
+                    <button type="button" id="btnIngresar"> INGRESAR </button>
+                    <a href=""> ¿No tienes una cuenta?<strong> Registrate</strong></a>
+                </form>
+              </section>
+              <section class="container hide img2 body" id="seccion2">
+                  <form class="bienvenida">
+                    <p><strong> “ Invertir en infraestructura resiliente equivale a sociedades más productivas e inclusivas; 
+                        y genera un beneficio neto en los países de ingreso bajo y mediano de USD 4,2 billones. “
+                      </strong></p>
+                  </form>
+              </section>
+              <section class ="container hide mapa body" id="seccion3">
+                  <form class="paisBandera">
+                      <h1> Selecciona una Bandera </h1>
+                      <picture id="banderas">
+                         <input type="image" class="countryClass" src="./img/peru.png" id="peru" value="PER" name="flag">
+                         <input type="image" class="countryClass" src="./img/mexico.png" id="mexico" value="MEX" name="flag">
+                         <input type="image" class="countryClass" src="./img/brasil.png" id="brasil" value="BRA" name="flag">
+                         <input type="image" class="countryClass" src="./img/chile.png" id="chile" value="CHL" name="flag">
+                      </picture>
+                  </form>
+                </section>
+                <section class ="container hide indicador-bg body" id="seccion4">
+                    <form class="graficos">
+                        <h1 id="titulo"></h1>
+                        <p> Busca tu indicador de desarrollo</p>
+                        <select class="listIndicador" id="list">
+                          <option disabled selected> Seleccione un indicador </option>
+                        </select>
+
+                        
+                        <ul id="indicadoresSector"></ul>
+                        <aside id="sectores">
+                          <button type="button" id="educacion" value="SE" > EDUCACION </button>
+                          <button type="button"  id="demografico" value="SP"> Demografico </button>
+                          <button type="button"id="laboral" value="SL">Laboral </button>
+                          <button type="button" id="comercial" value="IC">Comercial</button>
+                        </aside>
+
+                        <p> Selecciona los años que quiere ver para este indicador</p>
+                        <label>Desde: <input type="number" id="year1" max="2017" min="1960" value="1960"></label>
+                        <label>Hasta: <input type="number" id="year2" max="2017" min="1960" value="2007"></label>
+                        <!-- <p id="tituloIndicador"></p> -->
+                        <button type="submit" id="buscar" class="buscar">BUSCAR</button>
+                    </form>
+                  </section>
+                  <section class ="container hide grafico-bg body" id="seccion5">
+                      <h1> GRAFICOS </h1>
+                      <div id="chart_div"></div> 
+                      </section>
+                </main>
+                <footer></footer>
+                <script src="https://www.gstatic.com/charts/loader.js"></script>
+                <script src="./data/worldbank/worldbank.js"></script>
+                <script src="data.js"></script>
+                <script src="main.js"></script>
+              </body>
+            </html>   
+
+                      
+
