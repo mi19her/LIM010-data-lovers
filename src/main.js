@@ -73,8 +73,6 @@ const pintarIndicadoresPorPais = (arrayIndicadores) => {
     }
     return string;
 };
-
-
 const listaDeIndicadores =  document.getElementById('list');
 
 listaDeIndicadores.addEventListener('change', (event) => {
