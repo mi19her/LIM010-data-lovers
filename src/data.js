@@ -31,6 +31,7 @@ const indicadoresPorSector =(data,pais,sector)=>{
   }
  // debugger
 window.worldbank = {
+  selectRangoYear :selectRangoYear,
   arrayCountry: arrayCountry,
   tituloPais:tituloPais,
   tituloPorPais: tituloPorPais,

@@ -8,15 +8,13 @@
   </head>
   <body class="body">
     <header class="hide" id="header">
-        <img src="./img/logo-bm.png" alt="logo-bm" class="logo-bm">
-      <nav>
+          <img src="./img/logo-bm.png" alt="logo-bm" class="logo-bm">
         <ul>
-          <a id="start"> ¿QUE HACEMOS? </a>
-          <a id="country"> PAISES </a>
-          <a id="sector"> INDICADORES </a>
-          <a href="#"> GRAFICOS </a>
+          <a id="menuInicio"> INICIO </a>
+          <a id="menuCountry"> PAISES </a>
+          <a id="menuGraficos" class="hide"> GRAFICOS </a>
+          <a id="menuLogin"> Login </a>
         </ul>
-      </nav>
     </header>
     <main>
         <section class="container login-bg body" id="seccion1">
@@ -32,18 +30,23 @@
             <a href=""> ¿No tienes una cuenta?<strong> Registrate</strong></a>
         </form>
         </section>
-        
         <section class="container hide img2 body" id="seccion2">
+            <form class="bienvenida">
+              <p><strong> “ Invertir en infraestructura resiliente equivale a sociedades más productivas e inclusivas; 
+                  y genera un beneficio neto en los países de ingreso bajo y mediano de USD 4,2 billones. “
+                </strong></p>
+            </form>
         </section>
-
-        <section class ="container hide" id="seccion3">
-         <h1>seleccione un pais pintado para ver sus indicadores</h1>
-         <picture id="paises">
-            <input type="image" class="countryClass" src="./img/peru.png" id="peru" value="PER" name="flag">
-            <input type="image" class="countryClass" src="./img/mexico.png" id="mexico" value="MEX" name="flag">
-            <input type="image" class="countryClass" src="./img/brasil.png" id="brasil" value="BRA" name="flag">
-            <input type="image" class="countryClass" src="./img/chile.png" id="chile" value="CHL" name="flag">
-         </picture>
+        <section class ="container hide mapa body" id="seccion3">
+          <form class="paisBandera">
+              <h1> Selecciona una Bandera </h1>
+              <picture id="banderas">
+                 <input type="image" class="countryClass" src="./img/peru.png" id="peru" value="PER" name="flag">
+                 <input type="image" class="countryClass" src="./img/mexico.png" id="mexico" value="MEX" name="flag">
+                 <input type="image" class="countryClass" src="./img/brasil.png" id="brasil" value="BRA" name="flag">
+                 <input type="image" class="countryClass" src="./img/chile.png" id="chile" value="CHL" name="flag">
+              </picture>
+          </form>
          </section>
         <section class ="container hide" id="seccion4">
           <form class="desarrollo">
@@ -62,13 +65,13 @@
               </aside>
           </form>
         </section>
-
-        <section class ="container hide" id="seccion5">
+        <section class ="container hide grafico-bg body" id="seccion5">
           <h1> GRAFICOS </h1>
-
-       </section>
+          <div id="chart_div"></div> 
+          </section>
     </main>
     <footer></footer>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="./data/worldbank/worldbank.js"></script>
     <script src="data.js"></script>
     <script src="main.js"></script>

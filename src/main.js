@@ -1,3 +1,4 @@
+google.charts.load('current', {packages: ['corechart', 'bar']});
 /* Manejo del DOM */
 const password = document.getElementById("password");
 const seccionOne = document.getElementById("seccion1");
