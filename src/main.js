@@ -58,24 +58,65 @@ const pintarNommbresPorPais = (arrayTitle) => {
 }
 let paisSeleccionado;
 selectCountry.addEventListener('click', (event) => {
-    paisSeleccionado = event.target.value;
+    event.preventDefault();
+    const paisSeleccionado = event.target.value;
     if (paisSeleccionado !== '') {
-        seccionThree.classList.add('hide');
-        seccionFour.classList.remove('hide');
+        document.getElementById("menuGraficos").classList.remove('hide');
+        document.getElementById("seccion3").classList.add('hide');
+        document.getElementById("seccion4").classList.remove('hide');
         titulo.innerHTML = pintarNommbresPorPais(worldbank.tituloPorPais(WORLDBANK, paisSeleccionado));
-    }
-})
-selectSectores.addEventListener('click', (event) => {
-    const sectorSeleccionado = event.target.value;
-    if (sectorSeleccionado !== '') {
-        mostrarIndicador.innerHTML = pintarIndicadoresPorSectoryPais(worldbank.indicadoresPorSector(WORLDBANK,paisSeleccionado,sectorSeleccionado));
-        console.log(sectorSeleccionado);
+        ListIndicador.innerHTML = pintarIndicadoresPorPais(worldbank.indicadoresPorPais(WORLDBANK, paisSeleccionado));
     }
 });
-btnIndicator.addEventListener('click', () => {
-    seccionFour.classList.add('hide');
-    seccionFive.classList.remove('hide');
+const pintarIndicadoresPorPais = (arrayIndicadores) => {
+    let string = `<option disabled selected> Seleccione un indicador </option>`;
+    for (let i = 0; i < arrayIndicadores.length; i++) {
+        string += `<option id=${i} value="${i}">${arrayIndicadores[i]}</option>`
+    }
+    return string;
+};
+
+
+const listaDeIndicadores =  document.getElementById('list');
+
+listaDeIndicadores.addEventListener('change', (event) => {
+   
+   selectIndicador = WORLDBANK.PER.indicators[event.target.value].data
+   console.log(selectIndicador)
+});
+
+
+const grafico=()=>{
+    let arrayGrafico= new Array(Object.entries( selectIndicador));
+    let rango = arrayGrafico[0];
+    rango.forEach((elemento,indice)=>{
+      elemento[0]=(rango[indice][0]);
+      elemento[1]=parseInt(rango[indice][1]);  
+    });
+    let data = new google.visualization.DataTable();
+    data.addColumn('string', 'X');
+    data.addColumn('number', '% ');
+    data.addRows(rango);
+    const options = {
+      hAxis: {
+        title: 'AÑOS'
+      },
+      vAxis: {
+        title: 'PORCENTAJE'
+      }
+    };
+    var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+    chart.draw(data, options);
+  }
+menuGraphic.addEventListener('click', () => {
+    document.getElementById("seccion4").classList.add('hide');
+    document.getElementById("seccion5").classList.remove('hide');
 });
 buscar.addEventListener('click', (event) => {
     event.preventDefault();
-})
+    document.getElementById("seccion4").classList.add('hide');
+    document.getElementById("seccion5").classList.remove('hide');
+    grafico();
+    // resultadoGrafico.innerHTML = selectRangoYear(numeroInicial.value, numeroFinal.value, WORLDBANK.PER.indicators[0].data);
+    console.log(selectRangoYear(numeroInicial.value, numeroFinal.value, selectIndicador))
+});
