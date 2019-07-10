@@ -1,52 +1,53 @@
 google.charts.load('current', {packages: ['corechart', 'bar']});
 /* Manejo del DOM */
 const password = document.getElementById("password");
+const seccionOne = document.getElementById("seccion1");
+const seccionTwo = document.getElementById("seccion2");
+const seccionThree = document.getElementById("seccion3");
+const seccionFour = document.getElementById("seccion4");
+const seccionFive = document.getElementById("seccion5");
 const mnsInc = document.getElementById("mnsInc");
-const btnIngresar = document.getElementById("btnIngresar");
-const menuInicio = document.getElementById("menuInicio");
-const menuCountry = document.getElementById("menuCountry");
-const menuGraphic = document.getElementById("menuGraficos");
-const menuLosgin = document.getElementById("menuLogin");
-const selectCountry = document.getElementById("banderas");
+const header = document.getElementById("header");
+const btnStart = document.getElementById("start");
+const btnCountry = document.getElementById("country");
+const selectCountry = document.getElementById("paises");
+const btnIndicator = document.getElementById("sector");
 const ListIndicador = document.getElementById('list');
 const titulo = document.getElementById("titulo");
-const buscar = document.getElementById('buscar');
-const numeroInicial = document.getElementById('year1');
-const numeroFinal = document.getElementById('year2');
-const resultadoGrafico = document.getElementById('chart_div');
-menuLogin.addEventListener('click', () => {
-    document.getElementById("header").classList.add('hide');
-    document.getElementById("seccion1").classList.remove('hide');
-    document.getElementById("seccion2").classList.add('hide');
-    document.getElementById("seccion3").classList.add('hide');
-    document.getElementById("seccion5").classList.add('hide');
-})
+const selectSectores = document.getElementById("sectores");
+const mostrarIndicador = document.getElementById("indicadoresSector");
+
+const pintarIndicadoresPorSectoryPais = (arrayIndicadoresxSector) => {
+    let string = `<ul id="indicadoresSector"></ul>`;
+    for (let i = 0; i < arrayIndicadoresxSector.length; i++) {
+        string += `<ul id="indicadoresSector" value="${arrayIndicadoresxSector[i]}">${arrayIndicadoresxSector[i]}</ul>`
+    }
+    return string;
+};
 btnIngresar.addEventListener('click', () => {
-    // if(password.value===''){
-    //     mnsInc.innerHTML="ingrese password";
+    // if (password.value === '') {
+    //     mnsInc.innerHTML = "ingrese password";
     // }
-    // else{
-    //     if(password.value==='laboratoria'){
-    document.getElementById("header").classList.remove('hide');
-    document.getElementById("seccion1").classList.add('hide');
-    document.getElementById("seccion2").classList.remove('hide');
+    // else {
+    //     if (password.value === 'laboratoria') {
+            seccionOne.classList.add('hide');
+            header.classList.remove('hide');
+            seccionTwo.classList.remove('hide');
     //     }
-    //     else{
-    //         mnsInc.innerHTML="contraseña incorrecta";
+    //     else {
+    //         mnsInc.innerHTML = "contraseña incorrecta";
     //     }
     // }
-    // password.value="";
+    // password.value = "";
 });
-menuInicio.addEventListener('click', () => {
-    document.getElementById("seccion2").classList.remove('hide');
-    document.getElementById("seccion3").classList.add('hide');
-    document.getElementById("seccion5").classList.add('hide');
+
+btnCountry.addEventListener('click', () => {
+    seccionTwo.classList.add('hide');
+    seccionThree.classList.remove('hide');
 });
-menuCountry.addEventListener('click', () => {
-    document.getElementById("seccion2").classList.add('hide');
-    document.getElementById("seccion3").classList.remove('hide');
-    document.getElementById("seccion4").classList.add('hide');
-    document.getElementById("seccion5").classList.add('hide');
+btnStart.addEventListener('click', () => {
+    seccionTwo.classList.remove('hide');
+    seccionThree.classList.add('hide');
 });
 const pintarNommbresPorPais = (arrayTitle) => {
     let stringTitulo = `<h1 id="titulo"></h1>`;
@@ -55,66 +56,26 @@ const pintarNommbresPorPais = (arrayTitle) => {
     }
     return stringTitulo;
 }
+let paisSeleccionado;
 selectCountry.addEventListener('click', (event) => {
-    event.preventDefault();
-    const paisSeleccionado = event.target.value;
+    paisSeleccionado = event.target.value;
     if (paisSeleccionado !== '') {
-        document.getElementById("menuGraficos").classList.remove('hide');
-        document.getElementById("seccion3").classList.add('hide');
-        document.getElementById("seccion4").classList.remove('hide');
+        seccionThree.classList.add('hide');
+        seccionFour.classList.remove('hide');
         titulo.innerHTML = pintarNommbresPorPais(worldbank.tituloPorPais(WORLDBANK, paisSeleccionado));
-        ListIndicador.innerHTML = pintarIndicadoresPorPais(worldbank.indicadoresPorPais(WORLDBANK, paisSeleccionado));
+    }
+})
+selectSectores.addEventListener('click', (event) => {
+    const sectorSeleccionado = event.target.value;
+    if (sectorSeleccionado !== '') {
+        mostrarIndicador.innerHTML = pintarIndicadoresPorSectoryPais(worldbank.indicadoresPorSector(WORLDBANK,paisSeleccionado,sectorSeleccionado));
+        console.log(sectorSeleccionado);
     }
 });
-const pintarIndicadoresPorPais = (arrayIndicadores) => {
-    let string = `<option disabled selected> Seleccione un indicador </option>`;
-    for (let i = 0; i < arrayIndicadores.length; i++) {
-        string += `<option id=${i} value="${i}">${arrayIndicadores[i]}</option>`
-    }
-    return string;
-};
-
-
-const listaDeIndicadores =  document.getElementById('list');
-
-listaDeIndicadores.addEventListener('change', (event) => {
-   
-   selectIndicador = WORLDBANK.PER.indicators[event.target.value].data
-   console.log(selectIndicador)
-});
-
-
-const grafico=()=>{
-    let arrayGrafico= new Array(Object.entries( selectIndicador));
-    let rango = arrayGrafico[0];
-    rango.forEach((elemento,indice)=>{
-      elemento[0]=(rango[indice][0]);
-      elemento[1]=parseInt(rango[indice][1]);  
-    });
-    let data = new google.visualization.DataTable();
-    data.addColumn('string', 'X');
-    data.addColumn('number', '% ');
-    data.addRows(rango);
-    const options = {
-      hAxis: {
-        title: 'AÑOS'
-      },
-      vAxis: {
-        title: 'PORCENTAJE'
-      }
-    };
-    var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
-    chart.draw(data, options);
-  }
-menuGraphic.addEventListener('click', () => {
-    document.getElementById("seccion4").classList.add('hide');
-    document.getElementById("seccion5").classList.remove('hide');
+btnIndicator.addEventListener('click', () => {
+    seccionFour.classList.add('hide');
+    seccionFive.classList.remove('hide');
 });
 buscar.addEventListener('click', (event) => {
     event.preventDefault();
-    document.getElementById("seccion4").classList.add('hide');
-    document.getElementById("seccion5").classList.remove('hide');
-    grafico();
-    // resultadoGrafico.innerHTML = selectRangoYear(numeroInicial.value, numeroFinal.value, WORLDBANK.PER.indicators[0].data);
-    console.log(selectRangoYear(numeroInicial.value, numeroFinal.value, selectIndicador))
-});
+})
