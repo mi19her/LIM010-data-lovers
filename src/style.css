@@ -46,7 +46,7 @@ header{
 .login{
     display: flex;
     flex-flow: column wrap;
-    margin: 0 auto;
+    margin-top: 5%;
     background: #edebfdc9;
     width: 260px;
     padding: 50px 40px;
@@ -54,8 +54,7 @@ header{
 .logo-bm{
     width: 145px;
     align-self: center;
-    margin-bottom: 20px;
-    margin-left: 20px;
+    margin:20px;
 }
 .login label{
     font-family: 'Andada', serif;
@@ -91,6 +90,7 @@ header{
     padding: 20px;
     font-size: 23px;
     color: #222e3e;
+    margin-top: 20%;
 }
 .banderas{
     margin: 0 auto;
@@ -105,14 +105,15 @@ header{
     color: rgb(1, 48, 83);
     background: linear-gradient(180.04deg, rgba(255, 251, 251, 0.68) 0.06%, rgba(54, 141, 206, 0) 99.93%);
     font-size: 20px;
-    margin: 0 auto;
+    margin: 10% 2%;
 }
 .container{
     font-family: 'Andada', serif;
     height: 100vh;
     display: flex;
-    align-items: center;
     margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
 }
 .countryClass{
     border-radius: 20px;
@@ -121,17 +122,21 @@ header{
     align-self: center;
     border: 1px solid #f5eef3;
 }
-h1{
-    padding: 20px;
+h3{
+    padding: 0% 5%;
 }
-.graficos{
+.indicadoresporSector{
     display: flex;
-    flex-direction: column; 
-    align-items: end;
+    flex-direction: row-reverse; 
     margin: 0 auto;
     background: linear-gradient(180.04deg, rgba(255, 251, 251, 0.6) 0.06%, rgba(54, 141, 206, 0.6) 99.93%);
-    padding: 20px 80px;
+    padding: 5% 10%;
     color: #7f0882;
+}
+muestraIndicador{
+    height: 100vh;
+    width: 100%;
+    font-size: 14px;
 }
 .buscar{
     margin-top: 20px;
@@ -146,5 +151,15 @@ h1{
 	display:none;
 } 
  table{
-    width: 50%;
+    width: 100%;
  }
+ .card-text{
+    cursor: pointer;
+}
+.card-text :hover{
+    text-decoration: underline rgb(7, 7, 126);
+}
+.promedio{
+    display: flex;
+    flex-direction: row;
+}
