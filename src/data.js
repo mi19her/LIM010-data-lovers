@@ -40,13 +40,6 @@ const tituloDeIndicadorporIndice = (data, pais, sector, indice) => {
   let valor = listaNuevaSector[indice];
   return valor;
  }
-
-// //funcion para ordenar porcentajes
-// const formulaOrdenar =(objectData)=>{
-//   const arrayIndicador = Object.entries(objectData);
-//   return arrayIndicador.sort((a,b)=>{return a[1] - b[1];})
-// }
-
 //funcion par ordenar datos del inidicador selccionado en ascendente y descendente
 const formulaOrdenar = (objectData) => {
   const arrayIndicador=Object.entries(objectData);
