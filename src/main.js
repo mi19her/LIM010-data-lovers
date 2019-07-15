@@ -62,7 +62,7 @@ selectCountry.addEventListener('click', (event) => {
         document.getElementById("seccion3").classList.add('hide');
         document.getElementById("seccion4").classList.remove('hide');
         titulo.innerHTML = pintarNommbresPorPais(worldbank.tituloPorPais(WORLDBANK, paisSeleccionado));
-        // ListIndicador.innerHTML = pintarIndicadoresPorPais(worldbank.indicadoresPorPais(WORLDBANK, paisSeleccionado));
+
     }
 });
 //funcion para mostrar el nombre del pais como titulo
@@ -102,11 +102,12 @@ const pintarDatosxSectorxIndicadores = (obj) => {
         if (years[i] !== "") {
             stringDatosSector +=
                 ` <tr><td> ${i} </td>
-        <td>${ years[i].toFixed(2)}</td></tr>`;
+            <td>${ years[i].toFixed(2)}</td></tr>`;
         }
     }
     return stringDatosSector;
 };
+
 //funcion para mostrar los datos del indicador seleccionado
 mostrarIndicador.addEventListener('click', (event) => {
     let indice = event.target.id;
