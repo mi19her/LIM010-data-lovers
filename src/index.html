@@ -7,15 +7,13 @@
   <link href="https://fonts.googleapis.com/css?family=Andada&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body class="body">
   <header class="hide" id="header">
-    <img src="./img/logo-bm.png" alt="logo-bm" class="logo-bm">
+    <img src="./img/logoMenu.png" alt="logo-bm" class="logo-bm">
     <ul>
-      <a id="menuInicio"> INICIO </a>
-      <a id="menuCountry"> PAISES </a>
-      <a id="menuGraficos" class="hide"> GRAFICOS </a>
-      <a id="menuLogin"> Login </a>
+      <li id="menuInicio"> INICIO </li>
+      <li id="menuCountry"> PAISES </li>
+      <li id="menuGraficos" class="hide"> GRAFICOS </li>
     </ul>
   </header>
   <main>
@@ -47,30 +45,37 @@
       <form class="paisBandera">
         <h1> Selecciona una Bandera </h1>
         <picture id="banderas">
-          <input type="image" class="countryClass" src="./img/peru.png" id="peru" value="PER" name="flag">
-          <input type="image" class="countryClass" src="./img/mexico.png" id="mexico" value="MEX" name="flag">
-          <input type="image" class="countryClass" src="./img/brasil.png" id="brasil" value="BRA" name="flag">
-          <input type="image" class="countryClass" src="./img/chile.png" id="chile" value="CHL" name="flag">
+          <article class="portafolio">
+            <input type="image" class="countryClass" src="./img/peru.png" id="peru" value="PER" name="flag">
+            <label class="nombrePais"> PERU </label>
+          </article>
+          <article class="portafolio">
+            <input type="image" class="countryClass" src="./img/mexico.png" id="mexico" value="MEX" name="flag">
+            <label class="nombrePais">MEXICO</label>
+          </article>
+          <article class="portafolio">
+              <input type="image" class="countryClass" src="./img/brasil.png" id="brasil" value="BRA" name="flag">
+              <label class="nombrePais">BRASIL</label>
+          </article>
+          <article class="portafolio">
+              <input type="image" class="countryClass" src="./img/chile.png" id="chile" value="CHL" name="flag">
+              <label class="nombrePais">CHILE </label>
+          </article>
         </picture>
       </form>
     </section>
     <section class="container hide indicador-bg body" id="seccion4">
       <h3 id="titulo"></h3>
       <form class="indicadoresporSector">
-        <div class="muestraIndicador">
-          <ul id="indicadoresSector" class="card-text"></ul>
-        </div>
-        <!-- <select class="listIndicador" id="list">
-                          <option disabled selected> Seleccione un indicador </option>
-                        </select> -->
-        <div>
-          <p> Busca tu indicador de desarrollo</p>
           <aside id="sectores">
+              <p> Busca tu indicador de desarrollo</p>
             <button type="button" id="educacion" value="SE"> EDUCACION </button>
             <button type="button" id="demografico" value="SP"> Demografico </button>
             <button type="button" id="laboral" value="SL">Laboral </button>
             <button type="button" id="comercial" value="IC">Comercial</button>
           </aside>
+        <div class="muestraIndicador">
+          <ul id="indicadoresSector" class="card-text"></ul>
         </div>
       </form>
     </section>
@@ -78,21 +83,25 @@
       <h3 id="tituloIndicador"></h3>
       <form class="indicadoresporSector">
         <div class="botones ">
+            <h1> GRAFICOS </h1>
+            <div id="chart_div"></div>
           <p>Seleccione una opcion para ordenar los datos </p>
           <select id="ordenar">
             <option value="ascendente">ASCENDENTE</option>
             <option value="descendente">DESCENDENTE</option>
           </select>
           <P>Presione click para calcular el promedio de porcentajes para este indicador</P>
-          <div class="promedio"><button id="promedio">PROMEDIO</button><p id="muestraPromedio"></p></div>
-           <p> Selecciona los años que quiere ver para este indicador</p>
+          <div class="promedio">
+            <button id="promedio">PROMEDIO</button>
+            <p id="muestraPromedio"></p>
+          </div>
+          <p> Selecciona los años que quiere ver para este indicador</p>
           <label>Desde:
             <input type="number" id="year1" max="2017" min="1960" value="1960">
           </label>
           <label>Hasta:
             <input type="number" id="year2" max="2017" min="1960" value="2007">
           </label>
-          <!-- <p id="tituloIndicador"></p> -->
           <button type="submit" id="buscar" class="buscar">BUSCAR</button>
         </div>
         <div class="muestraIndicador">
@@ -109,11 +118,6 @@
       </form>
       </div>
     </section>
-    <section class="container hide grafico-bg body" id="seccion6">
-      <h1> GRAFICOS </h1>
-      <p id="titulodeSector"></p>
-      <div id="chart_div"></div>
-    </section>
   </main>
   <footer></footer>
   <script src="https://www.gstatic.com/charts/loader.js"></script>
@@ -121,5 +125,4 @@
   <script src="data.js"></script>
   <script src="main.js"></script>
 </body>
-
 </html>

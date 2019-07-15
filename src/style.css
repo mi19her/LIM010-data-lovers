@@ -5,20 +5,18 @@ header{
     background:white;
  }
  header ul{
+     display: flex;
      border-left: 1px solid #2f38b1;
      margin: 0 auto;
      padding: 12px;
      color:#085eaf;
  }
- header a{
+ header li{
+     list-style: none;
      padding: 0px 50px;
      font-family: 'Andada', serif;
      font-size: 17px;
      cursor: pointer;
- }
- #menuLogin{
-    border: 3px solid #085eaf;
-    border-radius: 10px;
  }
 .body{
     margin: 0;
@@ -52,9 +50,9 @@ header{
     padding: 50px 40px;
 }
 .logo-bm{
-    width: 145px;
+    width: 180px;
     align-self: center;
-    margin:20px;
+    margin:10px 20px;
 }
 .login label{
     font-family: 'Andada', serif;
@@ -92,9 +90,9 @@ header{
     color: #222e3e;
     margin-top: 20%;
 }
-.banderas{
-    margin: 0 auto;
-    flex-direction: column;
+#banderas{
+    display: flex;
+    flex-direction: row;
 }
 .paisBandera{
     flex-direction: column;
@@ -116,9 +114,9 @@ header{
     align-items: center;
 }
 .countryClass{
-    border-radius: 20px;
-    width: 219px;
-    height: 150px;
+    border-radius: 5%;
+    width: 183px;
+    /* height: 70%; */
     align-self: center;
     border: 1px solid #f5eef3;
 }
@@ -155,6 +153,8 @@ muestraIndicador{
  }
  .card-text{
     cursor: pointer;
+    overflow-y: scroll;
+    height: 45%;
 }
 .card-text :hover{
     text-decoration: underline rgb(7, 7, 126);
@@ -162,4 +162,8 @@ muestraIndicador{
 .promedio{
     display: flex;
     flex-direction: row;
+}
+.chart-div{
+    width: 1500px; 
+    height: 1000px;
 }
