@@ -1,11 +1,10 @@
 google.charts.load('current', { packages: ['corechart', 'bar'] });
-const password = document.getElementById("password");
+const password = document.getElementById('password');
 const mnsInc = document.getElementById("mnsInc");
+const logoClick = document.getElementById('logo-bm');
 const btnIngresar = document.getElementById("btnIngresar");
-const menuInicio = document.getElementById("menuInicio");
 const menuCountry = document.getElementById("menuCountry");
-const menuGraphic = document.getElementById("menuGraficos");
-const menuLogin = document.getElementById("menuLogin");
+const menuSectores = document.getElementById("menuSectores");
 const selectCountry = document.getElementById("banderas");
 const titulo = document.getElementById("titulo");
 const buscar = document.getElementById('buscar');
@@ -19,21 +18,26 @@ const muestraPromedio = document.getElementById("muestraPromedio");
 const ordenar = document.getElementById("ordenar");
 const numeroInicial = document.getElementById('year1');
 const numeroFinal = document.getElementById('year2');
+const nextPage = () => {
+    document.getElementById("seccion4").classList.add('hide');
+    document.getElementById("seccion5").classList.add('hide');
+}
 //funciones para el menu que permite mostrar y ocultar secciones
-menuInicio.addEventListener('click', () => {
+logoClick.addEventListener('click', () => {
     document.getElementById("seccion2").classList.remove('hide');
     document.getElementById("seccion3").classList.add('hide');
+    nextPage();
+})
+menuSectores.addEventListener('click', () => {
+    document.getElementById("seccion2").classList.add('hide');
+    document.getElementById("seccion3").classList.add('hide');
+    document.getElementById("seccion4").classList.remove('hide');
     document.getElementById("seccion5").classList.add('hide');
 });
 menuCountry.addEventListener('click', () => {
     document.getElementById("seccion2").classList.add('hide');
     document.getElementById("seccion3").classList.remove('hide');
-    document.getElementById("seccion4").classList.add('hide');
-    document.getElementById("seccion5").classList.add('hide');
-});
-menuGraphic.addEventListener('click', () => {
-    document.getElementById("seccion4").classList.add('hide');
-    document.getElementById("seccion5").classList.remove('hide');
+    nextPage();
 });
 //evento click al boton ingresar, para validar contraseña
 btnIngresar.addEventListener('click', () => {
@@ -58,11 +62,9 @@ selectCountry.addEventListener('click', (event) => {
     event.preventDefault();
     paisSeleccionado = event.target.value;
     if (paisSeleccionado !== '') {
-        document.getElementById("menuGraficos").classList.remove('hide');
         document.getElementById("seccion3").classList.add('hide');
         document.getElementById("seccion4").classList.remove('hide');
         titulo.innerHTML = pintarNommbresPorPais(worldbank.tituloPorPais(WORLDBANK, paisSeleccionado));
-
     }
 });
 //funcion para mostrar el nombre del pais como titulo
@@ -70,22 +72,17 @@ const pintarNommbresPorPais = (Title) => {
     let stringTitulo = `<h1 id="titulo"></h1>`;
     stringTitulo = `INDICADORES DE ${Title}`.toUpperCase();
     return stringTitulo;
- }
+}
 //funcion que validar la seleccion de un sector y jala sus respectivos indicadores
 let sectorSeleccionado;
 selectSectores.addEventListener('click', (event) => {
     sectorSeleccionado = event.target.value;
-    if (sectorSeleccionado !== '') {
-        mostrarIndicador.innerHTML = pintarIndicadoresPorSectoryPais(worldbank.indicadoresPorSector(WORLDBANK, paisSeleccionado, sectorSeleccionado));
-    }
-    
+     mostrarIndicador.innerHTML = pintarIndicadoresPorSectoryPais(worldbank.indicadoresPorSector(WORLDBANK, paisSeleccionado, sectorSeleccionado));
 });
-
 //funcion para mostrar los indicadores de cada sector dentro de una ul
 const pintarIndicadoresPorSectoryPais = (arrayIndicadoresxSector) => {
     let string2 = '';
     for (let i = 0; i < arrayIndicadoresxSector.length; i++) {
-        // const indiceOriginal = arrayIndicadoresxSector[i].substring(0,3) 
         string2 += `<li id=${i} value="${arrayIndicadoresxSector[i]}">${arrayIndicadoresxSector[i]}</li>`
     }
     return string2;
@@ -107,10 +104,11 @@ const pintarDatosxSectorxIndicadores = (obj) => {
     }
     return stringDatosSector;
 };
-
 //funcion para mostrar los datos del indicador seleccionado
-mostrarIndicador.addEventListener('click', (event) => {
+mostrarIndicador.addEventListener('change', (event) => {
+    event.preventDefault();
     let indice = event.target.id;
+    console.log(indice);
     document.getElementById("seccion4").classList.add('hide');
     document.getElementById("seccion5").classList.remove('hide');
     const indicadoresData = worldbank.datosPaisSector(WORLDBANK, paisSeleccionado, sectorSeleccionado);
@@ -119,26 +117,26 @@ mostrarIndicador.addEventListener('click', (event) => {
     let stringTitulo = `<h3 id="tituloIndicador"></h3>`;
     stringTitulo = `${indicador}`
     tituloIndicador.innerHTML = stringTitulo;
- });
+});
 //muestra el grafico utilizando los datos en arrays
-const grafico=()=>{
-    let arrayGrafico= new Array(Object.entries(years));
+const grafico = () => {
+    let arrayGrafico = new Array(Object.entries(years));
     let rango = arrayGrafico[0];
-    rango.forEach((elemento,indice)=>{
-      elemento[0]=(rango[indice][0]);
-      elemento[1]=parseFloat(rango[indice][1]);  
+    rango.forEach((elemento, indice) => {
+        elemento[0] = (rango[indice][0]);
+        elemento[1] = parseFloat(rango[indice][1]);
     });
     let data = new google.visualization.DataTable();
     data.addColumn('string', 'X');
     data.addColumn('number', '% ');
     data.addRows(rango);
     const options = {
-      hAxis: {
-        title: 'AÑOS'
-      },
-      vAxis: {
-        title: 'PORCENTAJE'
-      }
+        hAxis: {
+            title: 'AÑOS'
+        },
+        vAxis: {
+            title: 'PORCENTAJE'
+        }
     };
     var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
     chart.draw(data, options);
@@ -146,11 +144,11 @@ const grafico=()=>{
 //funcion ordenar datos
 const tablaOrdenar = (orden) => {
     let stringDatosSector = " ";
-    for (let i=0; i<orden.length;i++){
-        if(orden[i][1] !== ""){
+    for (let i = 0; i < orden.length; i++) {
+        if (orden[i][1] !== "") {
             stringDatosSector +=
-            ` <tr><td> ${orden[i][0]} </td>
-        <td>${orden[i][1].toFixed(2)}</td></tr>`;  
+                ` <tr><td> ${orden[i][0]} </td>
+        <td>${orden[i][1].toFixed(2)}</td></tr>`;
         }
     }
     return stringDatosSector;
@@ -162,7 +160,7 @@ ordenar.addEventListener('change', (event) => {
     if (ordenSeleccionado === 'ascendente') {
         resultadoOrdenar = window.worldbank.formulaOrdenar(years);
     } else {
-        resultadoOrdenar = window.worldbank.formulaOrdenar(years).reverse(); 
+        resultadoOrdenar = window.worldbank.formulaOrdenar(years).reverse();
     }
     mostrarDatosSector.innerHTML = tablaOrdenar(resultadoOrdenar);
 })
@@ -181,7 +179,7 @@ promedio.addEventListener('click', (event) => {
 //evento al boton buscar que permite mostrar el grafico al dar click
 buscar.addEventListener('click', (event) => {
     event.preventDefault();
-    const newDataSelectyear = selectRangoYear(numeroInicial.value,numeroFinal.value,years);
+    const newDataSelectyear = selectRangoYear(numeroInicial.value, numeroFinal.value, years);
     mostrarDatosSector.innerHTML = tablaOrdenar(newDataSelectyear);
     document.getElementById("seccion4").classList.add('hide');
     document.getElementById("seccion5").classList.remove('hide');
