@@ -10,9 +10,9 @@
 <body class="body">
   <header class="hide" id="header">
     <img src="./img/logoMenu.png" alt="logo-bm" class="logo-bm" id="logo-bm">
-    <ul class="menu">
-      <li id="menuCountry">PAISES</li>
-      <li id="menuSectores">SECTOR</li>
+    <ul>
+      <li id="menuCountry"> PAISES </li>
+      <li id="menuSectores"> SECTOR </li>
     </ul>
   </header>
   <main>
@@ -31,6 +31,23 @@
         </a>
       </form>
     </section>
+    <!-- <div class="slider">
+      <ul>
+        <li><img src="./img/fondo2.jpg" alt=""></li>
+        <li><img src="./im/fondo3.jpg" alt=""></li>
+        <li><img src="./im/fondo4.jpg" alt=""></li>
+      </ul>
+      <section class="container hide body" id="seccion2">
+        <form class="bienvenida">
+          <p>
+            <strong> “ Invertir en infraestructura resiliente equivale a sociedades más productivas e inclusivas; y
+              genera un beneficio
+              neto en los países de ingreso bajo y mediano de USD 4,2 billones. “
+            </strong>
+          </p>
+        </form>
+      </section>
+    </div> -->
     <section class="container hide img2 body" id="seccion2">
       <form class="bienvenida">
         <p>
@@ -53,12 +70,12 @@
             <label class="nombrePais">MEXICO</label>
           </article>
           <article class="portafolio">
-              <input type="image" class="countryClass" src="./img/brasil.png" id="brasil" value="BRA" name="flag">
-              <label class="nombrePais">BRASIL</label>
+            <input type="image" class="countryClass" src="./img/brasil.png" id="brasil" value="BRA" name="flag">
+            <label class="nombrePais">BRASIL</label>
           </article>
           <article class="portafolio">
-              <input type="image" class="countryClass" src="./img/chile.png" id="chile" value="CHL" name="flag">
-              <label class="nombrePais">CHILE </label>
+            <input type="image" class="countryClass" src="./img/chile.png" id="chile" value="CHL" name="flag">
+            <label class="nombrePais">CHILE </label>
           </article>
         </picture>
       </form>
@@ -66,13 +83,13 @@
     <section class="container hide indicador-bg body" id="seccion4">
       <h3 id="titulo"></h3>
       <form class="indicadoresporSector">
-          <aside id="sectores">
-              <p> Busca tu indicador de desarrollo</p>
-            <button type="button" id="educacion" value="SE"> EDUCACION </button>
-            <button type="button" id="demografico" value="SP"> Demografico </button>
-            <button type="button" id="laboral" value="SL">Laboral </button>
-            <button type="button" id="comercial" value="IC">Comercial</button>
-          </aside>
+        <aside id="sectores">
+          <p> Busca tu indicador de desarrollo</p>
+          <button type="button" id="educacion" value="SE"> EDUCACION </button>
+          <button type="button" id="demografico" value="SP"> Demografico </button>
+          <button type="button" id="laboral" value="SL">Laboral </button>
+          <button type="button" id="comercial" value="IC">Comercial</button>
+        </aside>
         <div class="muestraIndicador">
           <ul id="indicadoresSector" class="card-text"></ul>
         </div>
@@ -81,9 +98,9 @@
     <section class="container hide grafico-bg body" id="seccion5">
       <h3 id="tituloIndicador"></h3>
       <h4> GRAFICOS </h4>
-            <div id="chart_div"></div>
+      <div id="chart_div"></div>
       <form class="indicadoresporSector">
-        <div class="botones ">            
+        <div class="botones ">
           <p>Seleccione una opcion para ordenar los datos </p>
           <select id="ordenar">
             <option value="ascendente">ASCENDENTE</option>
