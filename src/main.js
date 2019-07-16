@@ -1,11 +1,12 @@
 google.charts.load('current', { packages: ['corechart', 'bar'] });
-const password = document.getElementById("password");
-const mnsInc = document.getElementById("mnsInc");
-const btnIngresar = document.getElementById("btnIngresar");
-const menuInicio = document.getElementById("menuInicio");
-const menuCountry = document.getElementById("menuCountry");
-const menuGraphic = document.getElementById("menuGraficos");
-const menuLogin = document.getElementById("menuLogin");
+const password = document.getElementById('password');
+const mnsInc = document.getElementById('mnsInc');
+const logoClick = document.getElementById('logo-bm');
+const btnIngresar = document.getElementById('btnIngresar');
+const menuInicio = document.getElementById('menuInicio');
+const menuCountry = document.getElementById('menuCountry');
+const menuGraphic = document.getElementById('menuGraficos');
+const menuLogin = document.getElementById('menuLogin');
 const selectCountry = document.getElementById("banderas");
 const titulo = document.getElementById("titulo");
 const buscar = document.getElementById('buscar');
@@ -19,6 +20,16 @@ const muestraPromedio = document.getElementById("muestraPromedio");
 const ordenar = document.getElementById("ordenar");
 const numeroInicial = document.getElementById('year1');
 const numeroFinal = document.getElementById('year2');
+const nextPage =()=>{
+    document.getElementById("seccion4").classList.add('hide');
+    document.getElementById("seccion5").classList.add('hide');
+}
+
+logoClick.addEventListener('click', ()=>{
+    document.getElementById("seccion2").classList.remove('hide');
+    document.getElementById("seccion3").classList.add('hide');
+    nextPage();
+})
 //funciones para el menu que permite mostrar y ocultar secciones
 menuInicio.addEventListener('click', () => {
     document.getElementById("seccion2").classList.remove('hide');
