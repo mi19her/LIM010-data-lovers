@@ -29,9 +29,9 @@ header{
 .login-bg {
     background-image: url(./img/fondo1.jpg);   
 }
-.img2 {
+/* .img2 {
     background-image: url(./img/fondo2.jpg);
-}
+} */
 .mapa{
     background-image: url(./img/mapa.jpg);
 }
@@ -84,11 +84,12 @@ header{
     font-size: 14px;
 }
 .bienvenida{
-    background: #e2dfea8f;
+    background: #0a0a0ac4;
     padding: 20px;
-    font-size: 23px;
-    color: #222e3e;
+    font-size: 20px;
+    color: #ffffff;
     margin-top: 20%;
+    font-family: 'Roboto', sans-serif;
 }
 #banderas{
     display: flex;
@@ -166,4 +167,40 @@ muestraIndicador{
 .chart-div{
     width: 1500px; 
     height: 1000px;
+}
+.slider{
+    width: 95%;
+    margin: auto;
+    overflow: hidden;
+}
+.slider ul {
+	display: flex;
+	padding: 0;
+	width: 400%;
+	 height: 20px; 
+	animation: cambio 10s infinite alternate linear;
+}
+
+.slider li {
+	width: 100%;
+	list-style: none;
+}
+
+.slider img {
+    width: 100%;
+    height:580px; 
+}
+
+@keyframes cambio {
+	0% {margin-left: 0;}
+	20% {margin-left: 0;}
+	
+	25% {margin-left: -100%;}
+	45% {margin-left: -100%;}
+	
+	50% {margin-left: -200%;}
+	70% {margin-left: -200%;}
+	
+	75% {margin-left: -300%;}
+	100% {margin-left: -300%;}
 }
