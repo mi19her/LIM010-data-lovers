@@ -40,20 +40,20 @@ menuSectores.addEventListener('click', () => {
 });
 // evento click al boton ingresar, para validar contraseña
 btnIngresar.addEventListener('click', () => {
-  // if(password.value===''){
-  //     mnsInc.innerHTML="ingrese password";
-  // }
-  // else{
-  //     if(password.value==='laboratoria'){
-  document.getElementById('header').classList.remove('hide');
-  document.getElementById('seccion1').classList.add('hide');
-  document.getElementById('seccion2').classList.remove('hide');
-  //     }
-  //     else{
-  //         mnsInc.innerHTML="contraseña incorrecta";
-  //     }
-  // }
-  // password.value="";
+  if (password.value === '') {
+    mnsInc.innerHTML = 'ingrese password';
+  }
+  else {
+    if (password.value === 'laboratoria') {
+      document.getElementById('header').classList.remove('hide');
+      document.getElementById('seccion1').classList.add('hide');
+      document.getElementById('seccion2').classList.remove('hide');
+    }
+    else {
+      mnsInc.innerHTML = 'contraseña incorrecta';
+    }
+  }
+  password.value = '';
 });
 // funcion para validar la seleccion de una bandera(Pais) y muestra el titulo del pais y sus indicadores en el select
 let paisSeleccionado;
@@ -107,7 +107,7 @@ const pintarDatosxSectorxIndicadores = (obj) => {
 mostrarIndicador.addEventListener('click', (event) => {
   let indice = event.target.id;
   console.log(indice);
-  
+
   document.getElementById('seccion4').classList.add('hide');
   document.getElementById('seccion5').classList.remove('hide');
   const indicadoresData = worldbank.datosPaisSector(WORLDBANK, paisSeleccionado, sectorSeleccionado);
