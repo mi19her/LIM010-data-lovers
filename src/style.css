@@ -12,12 +12,14 @@ header{
      padding: 0px;
      color:#085eaf;
  }
- header li, ol{
+ header li{
      list-style: none;
-     padding: 0px 10px;
+     /* padding: 0% 5%; */
      font-family: 'Andada', serif;
      font-size: 17px;
      cursor: pointer;
+     font-weight: bold;
+     margin: 3%;
  }
 .body{
     margin: 0;
@@ -51,9 +53,9 @@ header{
     padding: 50px 40px;
 }
 .logo-bm{
-    width: 180px;
+    width: 190px;
     align-self: center;
-    margin:10px 20px;
+    margin:10px;
 }
 .login label{
     font-family: 'Andada', serif;
@@ -81,8 +83,19 @@ header{
     border: 3px solid #ffffff;
     height: 42px;
     color: #ffffff;
+    font-size: 16px;
     background: #3897F0;
+    letter-spacing: 2px;
+}
+.btn-sector{
+    display: flex;
+    border: 2px solid #ffffff;
+    height: 35px;
+    color: #ffffff;
     font-size: 14px;
+    background: #3897F0;
+    letter-spacing: 2px;
+    margin: 5px;
 }
 .bienvenida{
     background: #e2dfea8f;
@@ -91,11 +104,33 @@ header{
     color: #222e3e;
     margin-top: 250px;
 }
-/* #banderas{
-    display: flex;
-    flex-direction: row;
-} */
-.paisBandera{
+.nombre-pais{
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+    background: #000000ad;
+    color: #ffffff;
+    text-align: justify;
+    transform: translateY(150%);
+    transition: all 0.5s ease-out;
+}
+.portafolio{
+    width: 30%;
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+}
+.portafolio:hover .nombre-pais{
+   transform: translateY(0%);
+}
+.portafolio:hover .country-class{
+   transform: scale(1.15);
+ }
+#banderas{
+    display: flex; 
+    justify-content: space-between;
+}
+.pais-bandera{
     flex-direction: column;
     display: flex;
     align-items: center;
@@ -104,7 +139,7 @@ header{
     color: rgb(1, 48, 83);
     background: linear-gradient(180.04deg, rgba(255, 251, 251, 0.68) 0.06%, rgba(54, 141, 206, 0) 99.93%);
     font-size: 20px;
-    margin: 10% 2%;
+    margin:auto;
 }
 .container{
     font-family: 'Andada', serif;
@@ -114,46 +149,38 @@ header{
     flex-direction: column;
     align-items: center;
 }
-.countryClass{
+.country-class{
     border-radius: 5%;
     width: 183px;
-    /* height: 70%; */
+    height: 110px;
     align-self: center;
     border: 1px solid #f5eef3;
+    transition: all 0.5s;
 }
 h3{
     padding: 0% 5%;
 }
-.indicadoresporSector{
+.indicadorespor-sector{
     display: flex;
-    flex-direction: row-reverse; 
     margin: 0 auto;
     background: linear-gradient(180.04deg, rgba(255, 251, 251, 0.6) 0.06%, rgba(54, 141, 206, 0.6) 99.93%);
     padding: 5%;
     color: #7f0882;
 }
-.muestraIndicador{
-     width: 100%;
+.muestra-indicador{
+     /* width: 100px; */
     font-size: 14px;
+    overflow-y: scroll;
+    height: 90%;
 }
-.buscar{
-    margin-top: 20px;
-    border: 3px solid #ffffff;
-    height: 42px;
-    color: #ffffff;
-    font-size: 16px;
-    background: rgb(0, 64, 126);
-    letter-spacing: 2px;
-}
- .hide{
+.hide{
 	display:none;
 } 
  table{
-    width: 100%;
+    width: 10%;
  }
  .card-text{
     cursor: pointer;
-    overflow-y: scroll;
     height: 340px;
     padding: 5px;
 }
@@ -161,10 +188,25 @@ h3{
     text-decoration: underline rgb(7, 7, 126);
 }
 .promedio{
-    display: flex;
     flex-direction: row;
 }
 .chart-div{
-    width: 1500px; 
-    height: 1000px;
+    width: 1300px; 
+    height: 800px;
+}
+@media only screen and (max-width: 768px) {
+    #banderas{
+        flex-direction: column;
+    }
+    .portafolio{
+      width: auto;
+    }
+    .indicadoresporSector{
+        display: flex;
+        margin: 0 auto;
+        background: linear-gradient(180.04deg, rgba(255, 251, 251, 0.6) 0.06%, rgba(54, 141, 206, 0.6) 99.93%);
+        padding: 5%;
+        color: #7f0882;
+    }
+
 }

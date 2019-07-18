@@ -41,7 +41,7 @@ const tituloDeIndicadorporIndice = (data, pais, sector, indice) => {
 // funcion par ordenar datos del inidicador selccionado en ascendente y descendente
 const formulaOrdenar = (objectData) => {
   const arrayIndicador = Object.entries(objectData);
-  return arrayIndicador.sort((prev, next) => { 
+  return arrayIndicador.sort((prev, next) => {
     return prev[1] - next[1];
   });
 };

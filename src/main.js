@@ -1,21 +1,21 @@
 google.charts.load('current', { packages: ['corechart', 'bar'] });
 const password = document.getElementById('password');
-const mnsInc = document.getElementById('mnsInc');
+const mnsInc = document.getElementById('msm');
 const logoClick = document.getElementById('logo-bm');
-const btnIngresar = document.getElementById('btnIngresar');
-const menuCountry = document.getElementById('menuCountry');
-const menuSectores = document.getElementById('menuSectores');
+const btnIngresar = document.getElementById('btn-ingresar');
+const menuCountry = document.getElementById('menu-country');
+const menuSectores = document.getElementById('menu-sectores');
 const menuLogin = document.getElementById('menuLogin');
 const selectCountry = document.getElementById('banderas');
 const titulo = document.getElementById('titulo');
 const buscar = document.getElementById('buscar');
-const resultadoGrafico = document.getElementById('chart_div');
+const resultadoGrafico = document.getElementById('chart-div');
 const selectSectores = document.getElementById('sectores');
-const mostrarIndicador = document.getElementById('indicadoresSector');
-const mostrarDatosSector = document.getElementById('mostrarDatosSector');
-const tituloIndicador = document.getElementById('tituloIndicador');
+const mostrarIndicador = document.getElementById('indicadores-sector');
+const mostrarDatosSector = document.getElementById('mostrar-datos-sector');
+const tituloIndicador = document.getElementById('titulo-indicador');
 const promedio = document.getElementById('promedio');
-const muestraPromedio = document.getElementById('muestraPromedio');
+const muestraPromedio = document.getElementById('muestra-promedio');
 const ordenar = document.getElementById('ordenar');
 const numeroInicial = document.getElementById('year1');
 const numeroFinal = document.getElementById('year2');
@@ -68,7 +68,7 @@ selectCountry.addEventListener('click', (event) => {
 });
 // funcion para mostrar el nombre del pais como titulo
 const pintarNommbresPorPais = (Title) => {
-  let stringTitulo = `<h1 id="titulo"></h1>`;
+  let stringTitulo = '<h1 id="titulo"></h1>';
   stringTitulo = `INDICADORES DE ${Title}`.toUpperCase();
   return stringTitulo;
 };
@@ -76,9 +76,7 @@ const pintarNommbresPorPais = (Title) => {
 let sectorSeleccionado;
 selectSectores.addEventListener('click', (event) => {
   sectorSeleccionado = event.target.value;
-  if (sectorSeleccionado !== '') {
-    mostrarIndicador.innerHTML = pintarIndicadoresPorSectoryPais(worldbank.indicadoresPorSector(WORLDBANK, paisSeleccionado, sectorSeleccionado));
-  }
+  mostrarIndicador.innerHTML = pintarIndicadoresPorSectoryPais(worldbank.indicadoresPorSector(WORLDBANK, paisSeleccionado, sectorSeleccionado));
 });
 // funcion para mostrar los indicadores de cada sector dentro de una ul
 const pintarIndicadoresPorSectoryPais = (arrayIndicadoresxSector) => {
@@ -100,7 +98,7 @@ const pintarDatosxSectorxIndicadores = (obj) => {
     if (years[i] !== ' ') {
       stringDatosSector +=
         ` <tr><td> ${i} </td>
-            <td>${ years[i].toFixed(2)}</td></tr>`;
+            <td>${years[i].toFixed(2)}</td></tr>`;
     }
   }
   return stringDatosSector;
@@ -108,14 +106,17 @@ const pintarDatosxSectorxIndicadores = (obj) => {
 // funcion para mostrar los datos del indicador seleccionado
 mostrarIndicador.addEventListener('click', (event) => {
   let indice = event.target.id;
+  console.log(indice);
+  
   document.getElementById('seccion4').classList.add('hide');
   document.getElementById('seccion5').classList.remove('hide');
   const indicadoresData = worldbank.datosPaisSector(WORLDBANK, paisSeleccionado, sectorSeleccionado);
   mostrarDatosSector.innerHTML = pintarDatosxSectorxIndicadores(indicadoresData[event.target.id]);
   let indicador = worldbank.tituloDeIndicadorporIndice(WORLDBANK, paisSeleccionado, sectorSeleccionado, indice);
-  let stringTitulo = `<h3 id="tituloIndicador"></h3>`;
+  let stringTitulo = '<h3 id="tituloIndicador"></h3>';
   stringTitulo = `${indicador}`;
   tituloIndicador.innerHTML = stringTitulo;
+  grafico();
 });
 // muestra el grafico utilizando los datos en arrays
 const grafico = () => {
@@ -137,7 +138,7 @@ const grafico = () => {
       title: 'PORCENTAJE'
     }
   };
-  var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+  var chart = new google.visualization.LineChart(document.getElementById('chart-div'));
   chart.draw(data, options);
 };
 // funcion ordenar datos
@@ -182,5 +183,4 @@ buscar.addEventListener('click', (event) => {
   mostrarDatosSector.innerHTML = tablaOrdenar(newDataSelectyear);
   document.getElementById('seccion4').classList.add('hide');
   document.getElementById('seccion5').classList.remove('hide');
-  grafico();
 }); 
