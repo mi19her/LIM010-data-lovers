@@ -30,7 +30,7 @@
     "no-array-constructor": 1
   },
   "globals": {
-    "example": false
+    "worldbank": false
   }
 }
 

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,14 +8,12 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body class="body">
   <header class="hide" id="header">
     <img src="./img/logoMenu.png" alt="logo-bm" class="logo-bm" id="logo-bm">
     <ul>
-      <li id="menuInicio"> INICIO </li>
-      <li id="menuCountry"> PAISES </li>
-      <li id="menuGraficos" class="hide"> GRAFICOS </li>
+      <li id="menu-country"> PAISES </li>
+      <li id="menu-sectores"> SECTOR </li>
     </ul>
   </header>
   <main>
@@ -27,9 +24,9 @@
         <input type="text">
         <label>Contraseña</label>
         <input type="password" id="password">
-        <span class="mnsInc" id="mnsInc"></span>
+        <span class="msm" id="msm"></span>
         <a href="pagina2.htm">¿Olvidaste Contraseña?</a>
-        <button type="button" id="btnIngresar"> INGRESAR </button>
+        <button type="button" id="btn-ingresar"> INGRESAR </button>
         <a href=""> ¿No tienes una cuenta?
           <strong> Registrate</strong>
         </a>
@@ -37,32 +34,8 @@
     </section>
 
 
-<section class="hide" id="seccion2">
- <div class="slider" id="idimagen">
-        <ul>
-            <li><img src="./img/fondo4.jpg" alt=""></li>
-             <section>
-              <p>
-                “ hola“
-              </p>
-             </section>
-            <li><img src="./img/desarrollo.jpg" alt=""></li>
-            <section>
-              <p>
-                “ como estas“
-              </p>
-            </section>
-            <li><img src="./img/productividad2.jpg" alt=""></li>
-            <li><img src="./img/crecimiento.jpg" alt=""></li>
-        </ul>
-      </div>
-    </section>
-    
 
-
-
-
-    <!-- <div class="slider" id="idimagen">
+    <div class="slider" id="idimagen">
         <ul>
             <li><img src="./img/fondo4.jpg" alt=""></li>
             <li><img src="./img/desarrollo.jpg" alt=""></li>
@@ -78,91 +51,93 @@
           </p>
         </form>
       </section>
-    </div> -->
+    </div>
 
     <section class="container hide mapa body" id="seccion3">
-      <form class="paisBandera">
+      <form class="pais-bandera">
         <h1> Selecciona una Bandera </h1>
         <picture id="banderas">
           <article class="portafolio">
-            <input type="image" class="countryClass" src="./img/peru.png" id="peru" value="PER" name="flag">
-            <label class="nombrePais"> PERU </label>
+            <input type="image" class="country-class" src="./img/peru.png" id="peru" value="PER" alt="peru">
+            <p class="nombre-pais"> PERU </p>
           </article>
           <article class="portafolio">
-            <input type="image" class="countryClass" src="./img/mexico.png" id="mexico" value="MEX" name="flag">
-            <label class="nombrePais">MEXICO</label>
+            <input type="image" class="country-class" src="./img/mexico.png" id="mexico" value="MEX" alt="mexico">
+            <p class="nombre-pais">MEXICO</p>
           </article>
           <article class="portafolio">
-            <input type="image" class="countryClass" src="./img/brasil.png" id="brasil" value="BRA" name="flag">
-            <label class="nombrePais">BRASIL</label>
+            <input type="image" class="country-class" src="./img/brasil.png" id="brasil" value="BRA" alt="brasil">
+            <p class="nombre-pais">BRASIL</p>
           </article>
           <article class="portafolio">
-            <input type="image" class="countryClass" src="./img/chile.png" id="chile" value="CHL" name="flag">
-            <label class="nombrePais">CHILE </label>
+            <input type="image" class="country-class" src="./img/chile.png" id="chile" value="CHL" alt="chile">
+            <p class="nombre-pais">CHILE </p>
           </article>
         </picture>
       </form>
     </section>
     <section class="container hide indicador-bg body" id="seccion4">
       <h3 id="titulo"></h3>
-      <form class="indicadoresporSector">
+      <form class="indicadorespor-sector">
         <aside id="sectores">
-          <p> Busca tu indicador de desarrollo</p>
-          <button type="button" id="educacion" value="SE"> EDUCACION </button>
-          <button type="button" id="demografico" value="SP"> Demografico </button>
-          <button type="button" id="laboral" value="SL">Laboral </button>
-          <button type="button" id="comercial" value="IC">Comercial</button>
+          <p> Elige un sector: </p>
+          <button type="button" id="educacion" value="SE" class="btn-sector"> EDUCACION </button>
+          <button type="button" id="demografico" value="SP" class="btn-sector"> DEMOGRAFICO </button>
+          <button type="button" id="laboral" value="SL" class="btn-sector">LABORAL </button>
+          <button type="button" id="comercial" value="IC" class="btn-sector">COMERCIAL</button>
         </aside>
-        <div class="muestraIndicador">
-          <ul id="indicadoresSector" class="card-text"></ul>
+        <div class="muestra-indicador">
+          <ul id="indicadores-sector" class="card-text"></ul>
         </div>
       </form>
     </section>
     <section class="container hide grafico-bg body" id="seccion5">
-      <h3 id="tituloIndicador"></h3>
-      <h4> GRAFICOS </h4>
-      <div id="chart_div"></div>
-      <form class="indicadoresporSector">
+      <h3 id="titulo-indicador"></h3>
+      <form class="indicadorespor-sector">
         <div class="botones ">
-          <p>Seleccione una opcion para ordenar los datos </p>
+          <p>Ordene:</p>
           <select id="ordenar">
             <option value="ascendente">ASCENDENTE</option>
             <option value="descendente">DESCENDENTE</option>
           </select>
-          <P>Presione click para calcular el promedio de porcentajes para este indicador</P>
+          <p>Ver promedio de porcentajes</p>
           <div class="promedio">
-            <button id="promedio">PROMEDIO</button>
-            <p id="muestraPromedio"></p>
+            <button id="promedio" class="btn-sector">PROMEDIO</button>
+            <p id="muestra-promedio"></p>
           </div>
-          <p> Selecciona los años que quiere ver para este indicador</p>
+          <p> Filtrar datos por rango de años </p>
           <label>Desde:
             <input type="number" id="year1" max="2017" min="1960" value="1960">
           </label>
           <label>Hasta:
             <input type="number" id="year2" max="2017" min="1960" value="2007">
           </label>
-          <button type="submit" id="buscar" class="buscar">BUSCAR</button>
+          <button type="submit" id="buscar" class="btn-sector">VER</button>
         </div>
-        <div class="muestraIndicador">
+        <div class="muestra-indicador">
           <table>
             <thead>
               <tr>
                 <th scope="columna1">AÑOS</th>
-                <th scope="columna2">PORCENTAJE</th>
+                <th scope="columna2"> % </th>
               </tr>
             </thead>
-            <tbody id="mostrarDatosSector">
+            <tbody id="mostrar-datos-sector">
             </tbody>
           </table>
+        </div>
+        <div id="chart-div"></div>
       </form>
-      </div>
     </section>
   </main>
-  <footer></footer>
+  <footer>
+    <div class="middle">
+      <i class="fab fa-facebook-f"></i>
+    </div>
+  </footer>
   <script src="https://www.gstatic.com/charts/loader.js"></script>
   <script src="./data/worldbank/worldbank.js"></script>
   <script src="data.js"></script>
   <script src="main.js"></script>
 </body>
-
 </html>

@@ -7,7 +7,7 @@
     "htmlhint": "htmlhint src/*.html test/*.html",
     "eslint": "eslint --ext .js src/ test/",
     "pretest": "npm run eslint && npm run htmlhint",
-    "test": "mocha"
+    "test": "jest --coverage"
   },
   "dependencies": {
     "chai": "^4.2.0",
@@ -15,5 +15,22 @@
     "eslint-plugin-jest": "^22.1.2",
     "htmlhint": "^0.10.1",
     "mocha": "^5.2.0"
+  },
+  "description": "Esta aplicacion contiene indicadores de desarrollo economico, demografico y comercial de los paises: Brasil, Mexico, CHile y Peru. Esta informacion ayuda a tomar decisiones estrategicas que beneficien el interes del usuario. \r Para acceder a la aplicacion se iniciara sesion ingresando su correo electronico y contraseña \"laboratoria\".",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mi19her/LIM010-data-lovers.git"
+  },
+  "keywords": [],
+  "author": "",
+  "bugs": {
+    "url": "https://github.com/mi19her/LIM010-data-lovers/issues"
+  },
+  "homepage": "https://github.com/mi19her/LIM010-data-lovers#readme",
+  "devDependencies": {
+    "jest": "^24.8.0"
   }
 }
