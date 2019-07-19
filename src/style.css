@@ -14,7 +14,7 @@ header{
  }
  header li{
      list-style: none;
-     /* padding: 0% 5%; */
+     padding: 0% 15%;
      font-family: 'Andada', serif;
      font-size: 17px;
      cursor: pointer;
@@ -88,7 +88,7 @@ header{
     letter-spacing: 2px;
 }
 .btn-sector{
-    display: flex;
+    /* display: flex; */
     border: 2px solid #ffffff;
     height: 35px;
     color: #ffffff;
@@ -96,10 +96,11 @@ header{
     background: #3897F0;
     letter-spacing: 2px;
     margin: 5px;
+    width: 150px;
 }
 .bienvenida{
     background: #e2dfea8f;
-    padding: 20px;
+    padding: 0% 10%;
     font-size: 23px;
     color: #222e3e;
     margin-top: 250px;
@@ -159,13 +160,15 @@ header{
 }
 h3{
     padding: 0% 5%;
+    color:#313534;
 }
 .indicadorespor-sector{
     display: flex;
     margin: 0 auto;
-    background: linear-gradient(180.04deg, rgba(255, 251, 251, 0.6) 0.06%, rgba(54, 141, 206, 0.6) 99.93%);
+    background: #fff1c19c;
     padding: 5%;
-    color: #7f0882;
+    color: #293462;
+    font-weight: bold;
 }
 .muestra-indicador{
      /* width: 100px; */
@@ -176,7 +179,7 @@ h3{
 .hide{
 	display:none;
 } 
- table{
+table{
     width: 10%;
  }
  .card-text{
@@ -194,6 +197,41 @@ h3{
     width: 1300px; 
     height: 800px;
 }
+.botones{
+    display: flex;
+    flex-direction: column;
+    padding-right: 2%;
+}
+.grafico{
+    padding-left: 15px;
+}
+.icon{
+    width: 25px;
+    height: 25px;
+}
+footer{
+    font-family: 'Andada', serif;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    color: #ffffff;
+    height: 30px;
+    margin: auto;
+    font-size: 13px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background:#216583ad;
+}
+.years{
+    border: 1px solid rgba(244, 247, 249, 0.25);
+    letter-spacing: 2px;
+    margin: 5px;
+    color: #293462;
+    font-family: andada;
+    font-weight: bold;
+}
 @media only screen and (max-width: 768px) {
     #banderas{
         flex-direction: column;
@@ -208,5 +246,14 @@ h3{
         padding: 5%;
         color: #7f0882;
     }
-
+    .grafico{
+        display: none;
+    }
+    .country-class {
+        width: 153px;
+        height: 90px;
+    }
+    header li {
+        padding: 0%;
+    }
 }
