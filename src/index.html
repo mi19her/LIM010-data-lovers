@@ -1,18 +1,134 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Data Lovers</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <headerPROBANDO></header>
-    <main></main>
-    <footer></footer>
-    <!-- <script src="./data/lol/lol.js"></script> -->
-    <!-- <script src="./data/pokemon/pokemon.js"></script> -->
-    <!-- <script src="./data/worldbank/worldbank.js"></script> -->
-    <script src="data.js"></script>
-    <script src="main.js"></script>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Lovers</title>
+  <link href="https://fonts.googleapis.com/css?family=Andada&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="body">
+  <header class="hide" id="header">
+    <img src="./img/logoMenu.png" alt="logo-bm" class="logo-bm" id="logo-bm">
+    <ul>
+      <li id="menu-country"> PAISES </li>
+      <li id="menu-sectores"> SECTOR </li>
+    </ul>
+  </header>
+  <main>
+    <section class="container login-bg body" id="seccion1">
+      <form class="login">
+        <img src="./img/logo-bm.png" alt="logo-bm" class="logo-bm">
+        <label>Correo Electronico</label>
+        <input type="text">
+        <label>Contraseña</label>
+        <input type="password" id="password">
+        <span class="msm" id="msm"></span>
+        <!-- <a href="pagina2.htm">¿Olvidaste Contraseña?</a> -->
+        <button type="button" id="btn-ingresar"> INGRESAR </button>
+        <!-- <a href=""> ¿No tienes una cuenta?
+          <strong> Registrate</strong> -->
+        </a>
+      </form>
+    </section>
+    <section class="container hide img2 body" id="seccion2">
+      <form class="bienvenida">
+        <p>
+          <strong> “ Invertir en infraestructura resiliente equivale a sociedades más productivas e inclusivas; y genera un beneficio
+            neto en los países de ingreso bajo y mediano de USD 4,2 billones. “
+          </strong>
+        </p>
+      </form>
+    </section>
+    <section class="container hide mapa body" id="seccion3">
+      <form class="pais-bandera">
+        <h1> Selecciona una Bandera </h1>
+        <picture id="banderas">
+          <article class="portafolio">
+            <input type="image" class="country-class" src="./img/peru.png" id="peru" value="PER" alt="peru">
+            <p class="nombre-pais"> PERU </p>
+          </article>
+          <article class="portafolio">
+            <input type="image" class="country-class" src="./img/mexico.png" id="mexico" value="MEX" alt="mexico">
+            <p class="nombre-pais">MEXICO</p>
+          </article>
+          <article class="portafolio">
+            <input type="image" class="country-class" src="./img/brasil.png" id="brasil" value="BRA" alt="brasil">
+            <p class="nombre-pais">BRASIL</p>
+          </article>
+          <article class="portafolio">
+            <input type="image" class="country-class" src="./img/chile.png" id="chile" value="CHL" alt="chile">
+            <p class="nombre-pais">CHILE </p>
+          </article>
+        </picture>
+      </form>
+    </section>
+    <section class="container hide indicador-bg body" id="seccion4">
+      <h3 id="titulo"></h3>
+      <form class="indicadorespor-sector">
+        <aside id="sectores">
+          <p> Elige un sector: </p>
+          <button type="button" id="educacion" value="SE" class="btn-sector"> EDUCACION </button>
+          <button type="button" id="demografico" value="SP" class="btn-sector"> DEMOGRAFICO </button>
+          <button type="button" id="laboral" value="SL" class="btn-sector">LABORAL </button>
+          <button type="button" id="comercial" value="IC" class="btn-sector">COMERCIAL</button>
+        </aside>
+        <div class="muestra-indicador">
+          <ul id="indicadores-sector" class="card-text"></ul>
+        </div>
+      </form>
+    </section>
+    <section class="container hide grafico-bg body" id="seccion5">
+      <h3 id="titulo-indicador"></h3>
+      <form class="indicadorespor-sector">
+        <div class="botones ">
+          <p>Ordene:</p>
+          <select id="ordenar" class="years">
+            <option value="ascendente">ASCENDENTE</option>
+            <option value="descendente">DESCENDENTE</option>
+          </select>
+          <div class="promedio">
+            <p>Ver promedio</p>
+            <button id="promedio" class="btn-sector">PROMEDIO</button>
+            <p id="muestra-promedio"></p>
+          </div>
+          <p> Filtrar datos por año</p>
+          <label class="rango">Desde:
+            <input type="number" id="year1" max="2017" min="1960" value="1960" class="years">
+          </label>
+          <label>Hasta:
+            <input type="number" id="year2" max="2017" min="1960" value="2007" class="years">
+          </label>
+          <button type="submit" id="buscar" class="btn-sector">VER TABLA</button>
+        </div>
+        <div class="muestra-indicador">
+          <table>
+            <thead>
+              <tr>
+                <th scope="columna1">AÑOS</th>
+                <th scope="columna2"> % </th>
+              </tr>
+            </thead>
+            <tbody id="mostrar-datos-sector">
+            </tbody>
+          </table>
+        </div>
+        <div id="chart-div" class="grafico"></div>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <div>
+        <a href="https://www.facebook.com/liliana.gonzales.16"><img class="icon" src="https://img.icons8.com/color/48/000000/facebook-new.png"></a> 
+        <a href="liligh14@gmail.com"><img class="icon" src="https://img.icons8.com/ultraviolet/40/000000/gmail-login.png"></a> 
+        <a href="https://twitter.com/milca15776422?lang=es"><img class="icon" src="https://img.icons8.com/cute-clipart/64/000000/twitter.png"></a> 
+        <a href="https://github.com/mi19her"><img class="icon" src="https://img.icons8.com/color/48/000000/github.png"></a> 
+    </div>
+    <p>©2019 - MilcaPulido & LilianaGonzales </p>
+  </footer>
+  <script src="https://www.gstatic.com/charts/loader.js"></script>
+  <script src="./data/worldbank/worldbank.js"></script>
+  <script src="data.js"></script>
+  <script src="main.js"></script>
+</body>
 </html>

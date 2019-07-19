@@ -1,211 +1,35 @@
-# Data Lovers
+# INVESTMENT DATA
 
-## Índice
+Esta aplicacion contiene indicadores de desarrollo economico, demografico y comercial de los paises: Brasil, Mexico, CHile y Peru. Esta informacion ayuda a tomar decisiones estrategicas que beneficien el interes del usuario. 
+Para acceder a la aplicacion se iniciara sesion ingresando su correo electronico y contraseña "laboratoria".
 
-- [Índice](#índice)
-- [Preámbulo](#preámbulo)
-- [Objetivos de aprendizaje](#objetivos-de-aprendizaje)
-- [Consideraciones generales](#consideraciones-generales)
-- [Requerimientos del proyecto](#requerimientos-del-proyecto)
-- [Contenido de referencia](#contenido-de-referencia)
-
-***
-
-## Preámbulo
-
-Según un estudio de IBM, el 90% de la data que existe hoy ha sido creada durante 
-los últimos dos años. Cada día generamos 2.5 trillones de bytes de datos, una 
-cifra sin precedentes.
-
-No obstante, los datos por sí mismos son de poca utilidad. Para que esas 
-grandes cantidades de datos se conviertan en **información** fácil de leer para 
-los usuarios, necesitamos entender y procesar estos datos. Una manera simple de 
-hacerlo es creando _interfaces_ y _visualizaciones_.
-
-En la siguiente imagen, podrás ver cómo con la data que que se ve en la parte 
-izquierda se puede construir una interfaz amigable y entendible por el usuario 
-al lado derecho.
-
-![json-interfaz](https://lh4.googleusercontent.com/Tn-RPXS26pVvOTdUzRT1KVaJ-_QbFs9SpcGLxSPE43fgbHaXtFgMUInuDt7kV41DkT1j8Tt29V0LxQW7SMtC6digOIhfTXSBKdwI08wUwhD3RAqlwy0hjfmhZ2BFe91mtmCSEqysfgk)
-
-\* Puedes ver el detalle de la data en este [link](https://gist.github.com/lalogf/dd4aa3017a9f8aa8f90dfbca382c4dc9#file-student-json)
-y la interfaz construida en este [link](https://app.talento.laboratoria.la/profile/HFOoMpOreBU2psCcjjLg5O2EWEv2).
-
-## Objetivos de aprendizaje
-
-El objetivo principal de este proyecto es que aprendas a diseñar y construir 
-una interfaz web donde se pueda visualizar y manipular data, entendiendo lo que 
-el usuario necesita a través de las historias de usuario.
-
-Dicho en palabras sencillas, aprenderás a:
-
-- Trabajar con **historias de usuario**, y crear en equipo las **definiciones 
-de terminado (_definition of done_)** y los **criterios de aceptación** en el 
-proceso de organización y planificación del trabajo.
-- Crear productos que sigan los **principios básicos de diseño visual** y las 
-**heurísticas de usabilidad**.
-- Iterar el diseño del producto, basándote en los resultados de los **tests de 
-usabilidad**.
-- Manipular **_arreglos_ (_arrays_) y _objetos_ (_objects_)**.
-- **Manipular el DOM** (agregar elementos dinámicamente basados en la data).
-- **Manejar eventos del DOM** para permitir interacción con el usuario 
-(filtrado, ordenado, ...).
-- Entender los beneficios y complejidades de **trabajar en equipo** en un 
-ambiente de alta incertidumbre.
-
-## Consideraciones generales
-
-- Este proyecto se debe resolver en duplas.
-- Una integrante deberá _forkear_ y _clonar_ este repositorio; luego, su 
-compañera, deberá _forkear_ y _clonar_ a la anterior.
-- Para poder interactuar con la página, al iniciar sesión deberán utilizar 
-como usuario y contraseña LABORATORIA.
-- Antes de comenzar, conversen sobre cómo les fue a cada una en el proyecto 
-anterior para que puedan entender mejor cómo organizarse. No caigan en el error 
-de separar las tareas en función a lo que ya sabes hacer o con lo que te 
-sientas más cómoda. Recuerden que acá están para aprender, no para "entregar" 
-proyectos solamente.
-- El proyecto será entregado subiendo tu código a GitHub (commit/push) y la
-interfaz será desplegada usando [GitHub Pages](https://pages.github.com/).
-- Desarrollar una historia de usuario hasta completarla, es decir, que se cumplen 
-**todos** sus _criterios de aceptación_ + **todas** su _definición de terminado_.
-- El tiempo sugerido para presentar este proyecto es de aproximadamente 3 
-semanas (3 sprints):
-
-  | Tiempos           | Fechas         |
-  | :---------------: | :------------: |
-  | **1er Sprint**    | 24/06 al 28/07 |
-  | **2do Sprint**    | 28/07 al 05/07 |
-  | **3er Sprint**    | 05/06 al 12/07 |
-
-  Recuerda que en cada sprint deberás realizar las siguientes actividades:
-
-  - Definir colaborativamente las _definiciones de terminado_ y _criterios 
-  de aceptación_ por cada historia de usuario a desarrollar en cada sprint.
-  - _Code review_.
-  - _Peer feedback_.
-  - _Retrospectiva_.
-  - _Sprint planning_.
-
-## Requerimientos del proyecto
-
-Esta vez te proponemos una serie de datos de diferentes _temáticas_ para que 
-exploren y decidan en equipo con cual trabajar. Por cada una encontrarás las 
-historias de usuario a implementar:
-
-**League of Legends (LOL)**
-
-El set de datos de [League of Legends - Challenger leaderboard](src/data/lol/) 
-muestra la lista de jugadores en una liga del 
-juego [League of Legends](https://play.lan.leagueoflegends.com/es_MX) (LoL), 
-puedes revisar la documentación de su API en este [link](https://developer.riotgames.com/api-methods/).
-Si _como equipo_ deciden trabajar con esta data deberán implemantar las siguientes historias de usuario:
-
-- Como usuaria quiero poder loguearme para acceder al sitio web.
-- Como usuaria quiero poder ver a todos los campeones al ingresar a la página 
-para saber que personajes existen.
-- Como usuaria quiero poder elegir un campeón para ver sus características más 
-relevantes.
-- Como usuaria quiero poder ordenar por orden alfabético (A-Z y Z-A) y por daño 
-de ataque (_attackdamage_) de manera ascendente (menor a mayor) o descendente 
-(mayor a menor) a los campeones para poder ubicarlos fácilmente y saber cuál es 
-el más poderoso.
-- Como usuaria quiero poder filtrar a los campeones por tipo (_tags_) para saber 
-quiénes y cuántos son de cada tipo.
-- Como usuaria quiero poder ver los campeones, cantidad y promedio de daño por 
-cada tipo de campeón.
-
-**Pokémon**
-
-En este set encontrarás una lista con los 151 [Pokémon](src/data/pokemon/) de la 
-región de Kanto, junto con sus respectivas estadísticas usadas en el 
-juego [Pokémon GO](https://www.pokemongolive.com). Si _como equipo_ deciden 
-trabajar con esta data deberán implementar las siguientes historias de usuario:
-
-- Como usuaria quiero poder loguearme para acceder al sitio web.
-- Como usuaria quiero poder ver a todos los pokemones al ingresar a la página 
-para saber cuántos tengo y cuántos me faltan atrapar.
-- Como usuaria quiero poder elegir un pokemon para ver sus características más 
-relevantes.
-- Como usuaria quiero poder ordenar por orden alfabético (A-Z y Z-A) y frecuencia 
-de aparición (_spawn_) de manera ascendente (menor a mayor) o descendente (mayor 
-a menor) a los pokemones para poder ubicarlos fácilmente y saber cuáles son los 
-más difíciles de atrapar.
-- Como usuaria quiero poder filtrar a los pokemones por tipo y debilidades para 
-saber quiénes y cuántos son de cada tipo y tienen esa debilidad.
-- Como usuaria quiero poder obtener el porcentaje de los pokemones que aparecen 
-en los diferentes tipos de huevo para saber qué huevos eclosionar.
-
-**Banco Mundial (World Bank)**
-
-Este set de datos contiene [indicadores de desarrollo del Banco Mundial](src/data/worldbank/) 
-de algunos países (Brasil, Chile, México y Perú). Estos datos incluyen indicadores 
-demográficos, económicos y comerciales. Si _como equipo_ deciden trabajar con 
-la data del [Banco Mundial](https://www.bancomundial.org/), deberán implementar 
-las siguientes historias de usuario:
-
-- Como usuaria quiero poder loguearme con mi usuario y contraseña para acceder 
-al sitio web.
-- Como usuaria quiero poder seleccionar un país y visualizar la data de sus 
-respectivos indicadores para analizar el comportamiento demográfico/económico 
-de cada región.
-- Como usuaria quiero poder ordenar los datos de los indicadores de manera 
-ascendente (menor a mayor) o descendente (mayor a menor) para entender su 
-evolución por años y porcentaje.
-- Como usuaria quiero poder filtrar los datos de los indicadores por año o 
-rango de años para entender su evolución en un tiempo definido.
-- Como usuario quiero poder ver el promedio de los porcentajes del indicador 
-seleccionado para tomar decisiones nuevas.
-
-### Planificación (Agile-Scrum)
-
-En este proyecto te hemos dado las historias de usuario. Éstas representan los 
-requerimientos y funcionalidades que desea el usuario final. Para su proceso de 
-planificación, deberán definir colaborativamente los _criterios de aceptación_ 
-y _definiciones de terminado_ específicos que permitan considerar a la _historia 
-de usuario_ desarrollada como válida y aceptada por el usuario final.
-
-Para realizar el seguimiento del desarrollo de las historias de usuario 
-utilizarás [issues](https://help.github.com/en/articles/about-issues) y 
-[project](https://help.github.com/en/articles/about-project-boards) en 
-Github. No dudes en solicitar ayuda a tus coaches.
-
-### UX (Diseño de experiencia de usuario)
-
-Antes de iniciar a codear, debes entender el problema que quieres solucionar 
-y cómo tu aplicación lo soluciona para ello:
-
-- Primero trabaja tu prototipo de baja fidelidad con papel y lápiz (blanco y 
-negro) para la vista mobile y desktop.
-- Luego valida esta solución con una compañera (pedir feedback).
-- Toma lo aprendido al momento de validar tu primer prototipo y desarrolla un 
-nuevo prototipo de alta fidelidad usando [Figma](https://www.figma.com/) para 
-la vista mobile y desktop.
-- Recuerda utilizar la identidad gráfica (colores, tipografía, etc) 
-correspondiente a la data que elijas.
-- Deberás exportar tu diseño a [Zeplin](https://zeplin.io/) y utilizar las 
-especificaciones de estilo que te dé Zeplin al momento de implementar tus 
-diseños en código.
-- En este proyecto te damos el prototipo final del 
-[login en figma](https://www.figma.com/file/awZfJWfpAioeanwhlcrsjSjc/Data-lovers?node-id=1%3A2) 
-el cual debe ser replicado en exactitud (_pixel perfect_).
-- Elaborar el readme del proyecto.
-
-`README.md`:
-Debe contener lo siguiente:
-
-- Un título con el nombre de tu proyecto.
-- Un resumen de 1 o 2 líneas de qué se trata tu proyecto e indicar el usuario 
-y la contraseña para utilizar el Demo.
 - La imagen final de tu proyecto.
-- Investigación UX:
-  - Explicar quiénes son los usuarios y los objetivos en relación con el 
-  producto.
-  - Explicar cómo el producto soluciona los problemas/necesidades de dichos 
-  usuarios.
-  - Luego colocarás la foto de tu primer prototipo de baja fidelidad (mobile 
+
+## Investigacion UX 
+  ### Usuarios
+  - Nuestros usuarios son todas las personas interesadas en el     crecimiento economico de su marca, que tienen un fin lucrativo y no lucrativo entre ellos tenemos a los empresarios, estudiantes, inversionistas, ONGs, profesionales y personas curiosas.
+  ### Producto
+  - Esta aplicacion te facilita la busqueda de informacion de tu interes, mostrando datos estadisticos de los indicadores seleccionados por pais las cuales son obtenidas a traves de la data del banco mundial por esto la informacion es veras y real. Teniendo esta informacion, como usuario, te ayudará a tomar mejores decisiones la cual te proporciona una ventaja al momento de invertir, e indirectamente ayudaras a disminuir los problemas economicos y sociales que aquejan a ese pais. 
+
+  ### Prototipo de Baja Fidelidad en Desktop
+   !["Login de Usuario y Vista 1"](im/loginVista1.jpg)
+
+   !["Login de Usuario y Vista 1"](im/vista2-3.jpg)
+
+   !["Login de Usuario y Vista 1"](im/vista4.jpg)
+
+  - Foto del primer prototipo de baja fidelidad (mobile 
   y desktop) en papel.
+
+   ### Prototipo de Baja Fidelidad en Mobile
+   !["Login de Usuario y Vista 1"](im/vista1_mobile.jpg)
+
+   !["Login de Usuario y Vista 1"](im/vista2_mobile.jpg)
+
+  - **`Feedback`**: Nos recomendaron trabajar con colores que contrastan mejor con la aplicacion, tambien nos recomendaron poner menos texto en la vista 1. 
+
   - Agregar un resumen del feedback recibido indicando las mejoras a realizar.
+
   - Imagen y link del prototipo de alta fidelidad final (mobile y desktop) en 
   Figma.
 

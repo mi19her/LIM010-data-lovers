@@ -1,0 +1,259 @@
+header{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background:white;
+    margin: auto;
+ }
+ header ul{
+     display: flex;
+     border-left: 1px solid #2f38b1;
+     margin: 0 auto;
+     padding: 0px;
+     color:#085eaf;
+ }
+ header li{
+     list-style: none;
+     padding: 0% 15%;
+     font-family: 'Andada', serif;
+     font-size: 17px;
+     cursor: pointer;
+     font-weight: bold;
+     margin: 3%;
+ }
+.body{
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height:100vh;    
+}
+.login-bg {
+    background-image: url(./img/fondo1.jpg);   
+}
+.img2 {
+    background-image: url(./img/fondo2.jpg);
+}
+.mapa{
+    background-image: url(./img/mapa.jpg);
+}
+.indicador-bg{
+    background-image: url(./img/indicador.jpg);
+}
+.grafico-bg{
+    background-image: url(./img/graphic.jpg);
+}
+.login{
+    display: flex;
+    flex-flow: column wrap;
+    margin-top: 5%;
+    background: #edebfdc9;
+    width: 260px;
+    padding: 50px 40px;
+}
+.logo-bm{
+    width: 190px;
+    align-self: center;
+    margin:10px;
+}
+.login label{
+    font-family: 'Andada', serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 25px;
+    color:#06325d;
+}
+.login input{
+    background: #FFFFFF;
+    border: none;
+    border-radius: 2px;
+    line-height: 25px;
+    margin-bottom: 12px;
+    padding-left: 15px;
+} 
+.login a{
+    align-self: flex-end;
+    line-height: 25px;
+    margin: 12px 0px ;
+    color: #100BFF;
+}
+.login button{
+    border: 3px solid #ffffff;
+    height: 42px;
+    color: #ffffff;
+    font-size: 16px;
+    background: #3897F0;
+    letter-spacing: 2px;
+}
+.btn-sector{
+    /* display: flex; */
+    border: 2px solid #ffffff;
+    height: 35px;
+    color: #ffffff;
+    font-size: 14px;
+    background: #3897F0;
+    letter-spacing: 2px;
+    margin: 5px;
+    width: 150px;
+}
+.bienvenida{
+    background: #e2dfea8f;
+    padding: 0% 10%;
+    font-size: 23px;
+    color: #222e3e;
+    margin-top: 250px;
+}
+.nombre-pais{
+    position: absolute;
+    bottom: 0;
+    padding: 10px;
+    background: #000000ad;
+    color: #ffffff;
+    text-align: justify;
+    transform: translateY(150%);
+    transition: all 0.5s ease-out;
+}
+.portafolio{
+    width: 30%;
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+}
+.portafolio:hover .nombre-pais{
+   transform: translateY(0%);
+}
+.portafolio:hover .country-class{
+   transform: scale(1.15);
+ }
+#banderas{
+    display: flex; 
+    justify-content: space-between;
+}
+.pais-bandera{
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    padding: 20px;
+    color: rgb(1, 48, 83);
+    background: linear-gradient(180.04deg, rgba(255, 251, 251, 0.68) 0.06%, rgba(54, 141, 206, 0) 99.93%);
+    font-size: 20px;
+    margin:auto;
+}
+.container{
+    font-family: 'Andada', serif;
+    height: 100vh;
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+}
+.country-class{
+    border-radius: 5%;
+    width: 183px;
+    height: 110px;
+    align-self: center;
+    border: 1px solid #f5eef3;
+    transition: all 0.5s;
+}
+h3{
+    padding: 0% 5%;
+    color:#313534;
+}
+.indicadorespor-sector{
+    display: flex;
+    margin: 0 auto;
+    background: #fff1c19c;
+    padding: 5%;
+    color: #293462;
+    font-weight: bold;
+}
+.muestra-indicador{
+     /* width: 100px; */
+    font-size: 14px;
+    overflow-y: scroll;
+    height: 90%;
+}
+.hide{
+	display:none;
+} 
+table{
+    width: 10%;
+ }
+ .card-text{
+    cursor: pointer;
+    height: 340px;
+    padding: 5px;
+}
+.card-text :hover{
+    text-decoration: underline rgb(7, 7, 126);
+}
+.promedio{
+    flex-direction: row;
+}
+.chart-div{
+    width: 1300px; 
+    height: 800px;
+}
+.botones{
+    display: flex;
+    flex-direction: column;
+    padding-right: 2%;
+}
+.grafico{
+    padding-left: 15px;
+}
+.icon{
+    width: 25px;
+    height: 25px;
+}
+footer{
+    font-family: 'Andada', serif;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    color: #ffffff;
+    height: 30px;
+    margin: auto;
+    font-size: 13px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background:#216583ad;
+}
+.years{
+    border: 1px solid rgba(244, 247, 249, 0.25);
+    letter-spacing: 2px;
+    margin: 5px;
+    color: #293462;
+    font-family: andada;
+    font-weight: bold;
+}
+@media only screen and (max-width: 768px) {
+    #banderas{
+        flex-direction: column;
+    }
+    .portafolio{
+      width: auto;
+    }
+    .indicadoresporSector{
+        display: flex;
+        margin: 0 auto;
+        background: linear-gradient(180.04deg, rgba(255, 251, 251, 0.6) 0.06%, rgba(54, 141, 206, 0.6) 99.93%);
+        padding: 5%;
+        color: #7f0882;
+    }
+    .grafico{
+        display: none;
+    }
+    .country-class {
+        width: 153px;
+        height: 90px;
+    }
+    header li {
+        padding: 0%;
+    }
+}
