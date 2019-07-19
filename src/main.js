@@ -40,20 +40,20 @@ menuSectores.addEventListener('click', () => {
 });
 // evento click al boton ingresar, para validar contraseña
 btnIngresar.addEventListener('click', () => {
-  // if (password.value === '') {
-  //   mnsInc.innerHTML = 'ingrese password';
-  // }
-  // else {
-  //   if (password.value === 'laboratoria') {
+  if (password.value === '') {
+    mnsInc.innerHTML = 'ingrese password';
+  }
+  else {
+    if (password.value === 'laboratoria') {
       document.getElementById('header').classList.remove('hide');
       document.getElementById('seccion1').classList.add('hide');
       document.getElementById('seccion2').classList.remove('hide');
-  //   }
-  //   else {
-  //     mnsInc.innerHTML = 'contraseña incorrecta';
-  //   }
-  // }
-  // password.value = '';
+    }
+    else {
+      mnsInc.innerHTML = 'contraseña incorrecta';
+    }
+  }
+  password.value = '';
 });
 // funcion para validar la seleccion de una bandera(Pais) y muestra el titulo del pais y sus indicadores en el select
 let paisSeleccionado;
