@@ -96,23 +96,23 @@
       <form class="indicadorespor-sector">
         <div class="botones ">
           <p>Ordene:</p>
-          <select id="ordenar">
+          <select id="ordenar" class="years">
             <option value="ascendente">ASCENDENTE</option>
             <option value="descendente">DESCENDENTE</option>
           </select>
-          <p>Ver promedio de porcentajes</p>
           <div class="promedio">
+            <p>Ver promedio</p>
             <button id="promedio" class="btn-sector">PROMEDIO</button>
             <p id="muestra-promedio"></p>
           </div>
-          <p> Filtrar datos por rango de años </p>
-          <label>Desde:
-            <input type="number" id="year1" max="2017" min="1960" value="1960">
+          <p> Filtrar datos por año</p>
+          <label class="rango">Desde:
+            <input type="number" id="year1" max="2017" min="1960" value="1960" class="years">
           </label>
           <label>Hasta:
-            <input type="number" id="year2" max="2017" min="1960" value="2007">
+            <input type="number" id="year2" max="2017" min="1960" value="2007" class="years">
           </label>
-          <button type="submit" id="buscar" class="btn-sector">VER</button>
+          <button type="submit" id="buscar" class="btn-sector">VER TABLA</button>
         </div>
         <div class="muestra-indicador">
           <table>
@@ -126,14 +126,18 @@
             </tbody>
           </table>
         </div>
-        <div id="chart-div"></div>
+        <div id="chart-div" class="grafico"></div>
       </form>
     </section>
   </main>
   <footer>
-    <div class="middle">
-      <i class="fab fa-facebook-f"></i>
+    <div>
+        <a href="https://www.facebook.com/liliana.gonzales.16"><img class="icon" src="https://img.icons8.com/color/48/000000/facebook-new.png"></a> 
+        <a href="liligh14@gmail.com"><img class="icon" src="https://img.icons8.com/ultraviolet/40/000000/gmail-login.png"></a> 
+        <a href="https://twitter.com/milca15776422?lang=es"><img class="icon" src="https://img.icons8.com/cute-clipart/64/000000/twitter.png"></a> 
+        <a href="https://github.com/mi19her"><img class="icon" src="https://img.icons8.com/color/48/000000/github.png"></a> 
     </div>
+    <p>©2019 - MilcaPulido & LilianaGonzales </p>
   </footer>
   <script src="https://www.gstatic.com/charts/loader.js"></script>
   <script src="./data/worldbank/worldbank.js"></script>

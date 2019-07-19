@@ -94,8 +94,9 @@ const pintarDatosxSectorxIndicadores = (obj) => {
   let stringDatosSector = ' ';
   porcentaje = Object.values(obj);
   let i;
-  for (i in years) {
+  for (i in obj) {
     if (years[i] !== ' ') {
+      console.log(years[i]);
       stringDatosSector +=
         ` <tr><td> ${i} </td>
             <td>${years[i].toFixed(2)}</td></tr>`;
@@ -105,9 +106,8 @@ const pintarDatosxSectorxIndicadores = (obj) => {
 };
 // funcion para mostrar los datos del indicador seleccionado
 mostrarIndicador.addEventListener('click', (event) => {
+  mostrarDatosSector.innerHTML = ' ';
   let indice = event.target.id;
-  console.log(indice);
-
   document.getElementById('seccion4').classList.add('hide');
   document.getElementById('seccion5').classList.remove('hide');
   const indicadoresData = worldbank.datosPaisSector(WORLDBANK, paisSeleccionado, sectorSeleccionado);
@@ -117,6 +117,7 @@ mostrarIndicador.addEventListener('click', (event) => {
   stringTitulo = `${indicador}`;
   tituloIndicador.innerHTML = stringTitulo;
   grafico();
+
 });
 // muestra el grafico utilizando los datos en arrays
 const grafico = () => {
