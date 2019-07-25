@@ -117,7 +117,6 @@ mostrarIndicador.addEventListener('click', (event) => {
   stringTitulo = `${indicador}`;
   tituloIndicador.innerHTML = stringTitulo;
   grafico();
-
 });
 // muestra el grafico utilizando los datos en arrays
 const grafico = () => {

@@ -715,7 +715,6 @@ describe('tituloPorPais', () => {
     expect(worldbank.tituloPorPais(input, 'PER')).toEqual(output);
   });
 });
-
 describe('indicadoresPorSector', () => {
   it('debería ser una función', () => {
     expect(typeof worldbank.indicadoresPorSector).toBe('function');
