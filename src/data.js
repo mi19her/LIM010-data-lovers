@@ -9,7 +9,7 @@ const indicadoresPorSector = (data, pais, sector) => {
   const listaNuevaSector = [];
   let indicadores = data[pais].indicators;
   for (let i = 0; i < indicadores.length; i++) {
-    if ((indicadores[i]['indicatorCode']).substring(0, 2) === sector) {
+    if ((indicadores[i]['indicatorCode'].split('.')[0] === sector)) { 
       listaNuevaSector.push(indicadores[i]['countryName'] + ' - ' + indicadores[i]['indicatorName']);
     }
   }

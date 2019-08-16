@@ -42,14 +42,12 @@ menuSectores.addEventListener('click', () => {
 btnIngresar.addEventListener('click', () => {
   if (password.value === '') {
     mnsInc.innerHTML = 'ingrese password';
-  }
-  else {
-    if (password.value === 'laboratoria') {
+  } else {
+    if (password.value === 'LABORATORIA') {
       document.getElementById('header').classList.remove('hide');
       document.getElementById('seccion1').classList.add('hide');
       document.getElementById('seccion2').classList.remove('hide');
-    }
-    else {
+    } else {
       mnsInc.innerHTML = 'contraseña incorrecta';
     }
   }
@@ -96,10 +94,9 @@ const pintarDatosxSectorxIndicadores = (obj) => {
   let i;
   for (i in obj) {
     if (years[i] !== ' ') {
-      console.log(years[i]);
       stringDatosSector +=
         ` <tr><td> ${i} </td>
-            <td>${years[i].toFixed(2)}</td></tr>`;
+            <td>${parseFloat(years[i]).toFixed(2)}</td></tr>`;
     }
   }
   return stringDatosSector;
@@ -117,7 +114,6 @@ mostrarIndicador.addEventListener('click', (event) => {
   stringTitulo = `${indicador}`;
   tituloIndicador.innerHTML = stringTitulo;
   grafico();
-
 });
 // muestra el grafico utilizando los datos en arrays
 const grafico = () => {
@@ -149,7 +145,7 @@ const tablaOrdenar = (orden) => {
     if (orden[i][1] !== ' ') {
       stringDatosSector +=
         ` <tr><td> ${orden[i][0]} </td>
-        <td>${orden[i][1].toFixed(2)}</td></tr>`;
+        <td>${parseFloat(orden[i][1]).toFixed(2)}</td></tr>`;
     }
   }
   return stringDatosSector;
