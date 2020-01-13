@@ -1,3 +1,7 @@
+// let WORLDBANK;
+// fetch().then().then(data=>{
+//   WORLDBANK = data;
+// })
 const WORLDBANK = {
   "PER": {
     "indicators": [

@@ -9,7 +9,7 @@ const indicadoresPorSector = (data, pais, sector) => {
   const listaNuevaSector = [];
   let indicadores = data[pais].indicators;
   for (let i = 0; i < indicadores.length; i++) {
-    if ((indicadores[i]['indicatorCode']).substring(0, 2) === sector) {
+    if ((indicadores[i]['indicatorCode']).split('.')[0] === sector) {
       listaNuevaSector.push(indicadores[i]['countryName'] + ' - ' + indicadores[i]['indicatorName']);
     }
   }
@@ -55,6 +55,17 @@ const formulaPromedio = (arrayPorcentaje) => {
 };
 // debugger
 // array que contiene los porcentajes de un indicador por el rango de años seleccionados
+// const selectRangoYear = (numeroInicial, numeroFinal, objYear) => {
+//   let rango = [];
+//   const arrYears = Object.keys(objYear);
+//   const arrValue = Object.values(objYear);
+//   for (let i = 0; i <= arrYears.length; i++) {
+//     if (arrYears[i] >= numeroInicial && arrYears[i] <= numeroFinal) {
+//       rango.push([arrYears[i], arrValue[i]]);
+//     }
+//   }
+//   return rango;
+// };
 const selectRangoYear = (numeroInicial, numeroFinal, objYear) => {
   let rango = [];
   const arrYears = Object.keys(objYear);
